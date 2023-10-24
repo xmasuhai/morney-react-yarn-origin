@@ -1,3 +1,14 @@
+# 旺财记账 React
+
+## 环境
+
+- `node 16` (`node 18` 会报错)
+- `yarn 1.22.19`
+- 保持 `react`、`react-dom`、`"@types/react`、`@types/react` 版本一致
+  - 在 `package.json` 中还需要添加配置 `"resolutions": {"@types/react": "17.0.2"},`
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
