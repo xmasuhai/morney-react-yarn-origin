@@ -2,7 +2,7 @@
 
 ## 环境
 
-- `node 16` (`node 18` 会报错)
+- `node 16` (`node 18` 会报错) 每次都需要切换 `nvm use 16`
 - `yarn 1.22.19`
 - 保持 `react`、`react-dom`、`"@types/react`、`@types/react` 版本一致
   - 在 `package.json` 中还需要添加配置 `"resolutions": {"@types/react": "17.0.2"},`
