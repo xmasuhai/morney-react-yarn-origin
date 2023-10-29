@@ -1,4 +1,8 @@
+@import 'style/var/var';
+//noinspection CssInvalidAtRule
 @import-normalize;
+
+* {color: $cyan;}
 
 body {
   margin: 0;
