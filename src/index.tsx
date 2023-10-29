@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
-import 'yyy/bbb.ts'
+import 'yyy/bbb.tsx'
 
 const div = document.getElementById('root')
 
