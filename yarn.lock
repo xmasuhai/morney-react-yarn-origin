@@ -1183,6 +1183,23 @@
   resolved "https://registry.npmmirror.com/@csstools/normalize.css/-/normalize.css-10.1.0.tgz#f0950bba18819512d42f7197e56c518aa491cf18"
   integrity sha512-ij4wRiunFfaJxjB0BdrYHIH8FxBJpOwNPhhAcunlmPdXudL1WQV1qoP9un6JsEBAgQH+7UXyyjh0g7jTxXK6tg==
 
+"@emotion/is-prop-valid@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.npmmirror.com/@emotion/is-prop-valid/-/is-prop-valid-1.2.1.tgz#23116cf1ed18bfeac910ec6436561ecb1a3885cc"
+  integrity sha512-61Mf7Ufx4aDxx1xlDeOm8aFFigGHE4z+0sKCa+IHCeZKiyP9RLD0Mmx7m8b9/Cf37f7NAvQOOJAbQQGVr5uERw==
+  dependencies:
+    "@emotion/memoize" "^0.8.1"
+
+"@emotion/memoize@^0.8.1":
+  version "0.8.1"
+  resolved "https://registry.npmmirror.com/@emotion/memoize/-/memoize-0.8.1.tgz#c1ddb040429c6d21d38cc945fe75c818cfb68e17"
+  integrity sha512-W2P2c/VRW1/1tLox0mVUalvnWXxavmv/Oum2aPsRcoDJuob75FC3Y8FbpfLwUegRcxINtGUMPq0tFCvYNTBXNA==
+
+"@emotion/unitless@^0.8.0":
+  version "0.8.1"
+  resolved "https://registry.npmmirror.com/@emotion/unitless/-/unitless-0.8.1.tgz#182b5a4704ef8ad91bde93f7a860a88fd92c79a3"
+  integrity sha512-KOEGMu6dmJZtpadb476IsZBclKvILjopjUii3V+7MnXIQCYh8W3NgNcgwo21n9LXZX6EDIKvqfjYxXebDwxKmQ==
+
 "@eslint/eslintrc@^0.4.3":
   version "0.4.3"
   resolved "https://registry.npmmirror.com/@eslint/eslintrc/-/eslintrc-0.4.3.tgz#9e42981ef035beb3dd49add17acb96e8ff6f394c"
@@ -1830,6 +1847,14 @@
   dependencies:
     "@types/node" "*"
 
+"@types/hoist-non-react-statics@*":
+  version "3.3.4"
+  resolved "https://registry.npmmirror.com/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.4.tgz#cc477ce0283bb9d19ea0cbfa2941fe2c8493a1be"
+  integrity sha512-ZchYkbieA+7tnxwX/SCBySx9WwvWR8TaP5tb2jRAzwvLb/rWchGw3v0w3pqUbUvj0GCwW2Xz/AVPSk6kUGctXQ==
+  dependencies:
+    "@types/react" "*"
+    hoist-non-react-statics "^3.3.0"
+
 "@types/html-minifier-terser@^5.0.0":
   version "5.1.2"
   resolved "https://registry.npmmirror.com/@types/html-minifier-terser/-/html-minifier-terser-5.1.2.tgz#693b316ad323ea97eed6b38ed1a3cc02b1672b57"
@@ -1960,6 +1985,20 @@
   version "2.0.2"
   resolved "https://registry.npmmirror.com/@types/stack-utils/-/stack-utils-2.0.2.tgz#01284dde9ef4e6d8cef6422798d9a3ad18a66f8b"
   integrity sha512-g7CK9nHdwjK2n0ymT2CW698FuWJRIx+RP6embAzZ2Qi8/ilIrA1Imt2LVSeHUzKvpoi7BhmmQcXz95eS0f2JXw==
+
+"@types/styled-components@^5.1.29":
+  version "5.1.29"
+  resolved "https://registry.npmmirror.com/@types/styled-components/-/styled-components-5.1.29.tgz#a483d7829b972233455f1500930d6a7d30aa328e"
+  integrity sha512-5h/ah9PAblggQ6Laa4peplT4iY5ddA8qM1LMD4HzwToUWs3hftfy0fayeRgbtH1JZUdw5CCaowmz7Lnb8SjIxQ==
+  dependencies:
+    "@types/hoist-non-react-statics" "*"
+    "@types/react" "*"
+    csstype "^3.0.2"
+
+"@types/stylis@^4.0.2":
+  version "4.2.2"
+  resolved "https://registry.npmmirror.com/@types/stylis/-/stylis-4.2.2.tgz#baabb6b3aa6787e90a6bd6cd75cd8fb9a4f256a3"
+  integrity sha512-Rm17MsTpQQP5Jq4BF7CdrxJsDufoiL/q5IbJZYZmOZAJALyijgF7BzLgobXUqraNcQdqFYLYGeglDp6QzaxPpg==
 
 "@types/tapable@^1", "@types/tapable@^1.0.5":
   version "1.0.10"
@@ -3320,6 +3359,11 @@ camelcase@^6.0.0, camelcase@^6.1.0, camelcase@^6.2.0:
   resolved "https://registry.npmmirror.com/camelcase/-/camelcase-6.3.0.tgz#5685b95eb209ac9c0c177467778c9c84df58ba9a"
   integrity sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==
 
+camelize@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.npmmirror.com/camelize/-/camelize-1.0.1.tgz#89b7e16884056331a35d6b5ad064332c91daa6c3"
+  integrity sha512-dU+Tx2fsypxTgtLoE36npi3UqcjSSMNYfkqgmoEhtZrraP5VWq0K7FkWVTYa8eMPtnU/G2txVsfdCJTn9uzpuQ==
+
 caniuse-api@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmmirror.com/caniuse-api/-/caniuse-api-3.0.0.tgz#5e4d90e2274961d46291997df599e3ed008ee4c0"
@@ -3839,6 +3883,11 @@ css-blank-pseudo@^0.1.4:
   dependencies:
     postcss "^7.0.5"
 
+css-color-keywords@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmmirror.com/css-color-keywords/-/css-color-keywords-1.0.0.tgz#fea2616dc676b2962686b3af8dbdbe180b244e05"
+  integrity sha512-FyyrDHZKEjXDpNJYvVsV960FiqQyXc/LlYmsxl2BcdMb2WPx0OGRVgTg55rPSyLSNMqP52R9r8geSp7apN3Ofg==
+
 css-color-names@0.0.4, css-color-names@^0.0.4:
   version "0.0.4"
   resolved "https://registry.npmmirror.com/css-color-names/-/css-color-names-0.0.4.tgz#808adc2e79cf84738069b646cb20ec27beb629e0"
@@ -3910,6 +3959,15 @@ css-select@^4.1.3:
     domhandler "^4.3.1"
     domutils "^2.8.0"
     nth-check "^2.0.1"
+
+css-to-react-native@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.npmmirror.com/css-to-react-native/-/css-to-react-native-3.2.0.tgz#cdd8099f71024e149e4f6fe17a7d46ecd55f1e32"
+  integrity sha512-e8RKaLXMOFii+02mOlqwjbD00KSEKqblnpO9e++1aXS1fPQOpS1YoqdVHBqPjHNoxeF2mimzVqawm2KCbEdtHQ==
+  dependencies:
+    camelize "^1.0.0"
+    css-color-keywords "^1.0.0"
+    postcss-value-parser "^4.0.2"
 
 css-tree@1.0.0-alpha.37:
   version "1.0.0-alpha.37"
@@ -4059,7 +4117,7 @@ cssstyle@^2.3.0:
   dependencies:
     cssom "~0.3.6"
 
-csstype@^3.0.2:
+csstype@^3.0.2, csstype@^3.1.2:
   version "3.1.2"
   resolved "https://registry.npmmirror.com/csstype/-/csstype-3.1.2.tgz#1d4bf9d572f11c14031f0436e1c10bc1f571f50b"
   integrity sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==
@@ -5835,6 +5893,13 @@ hmac-drbg@^1.0.1:
     hash.js "^1.0.3"
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
+
+hoist-non-react-statics@^3.3.0:
+  version "3.3.2"
+  resolved "https://registry.npmmirror.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
+  integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
+  dependencies:
+    react-is "^16.7.0"
 
 hoopy@^0.1.4:
   version "0.1.4"
@@ -9255,7 +9320,7 @@ postcss@^7, postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.17, po
     picocolors "^0.2.1"
     source-map "^0.6.1"
 
-postcss@^8.1.0:
+postcss@^8.1.0, postcss@^8.4.31:
   version "8.4.31"
   resolved "https://registry.npmmirror.com/postcss/-/postcss-8.4.31.tgz#92b451050a9f914da6755af352bdc0192508656d"
   integrity sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ==
@@ -9577,7 +9642,7 @@ react-error-overlay@^6.0.9:
   resolved "https://registry.npmmirror.com/react-error-overlay/-/react-error-overlay-6.0.11.tgz#92835de5841c5cf08ba00ddd2d677b6d17ff9adb"
   integrity sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==
 
-react-is@^16.13.1:
+react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
   resolved "https://registry.npmmirror.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
@@ -10351,6 +10416,11 @@ sha.js@^2.4.0, sha.js@^2.4.8:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
 
+shallowequal@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npmmirror.com/shallowequal/-/shallowequal-1.1.0.tgz#188d521de95b9087404fd4dcb68b13df0ae4e7f8"
+  integrity sha512-y0m1JoUZSlPAjXVtPPW70aZWfIL/dSP7AFkRnniLCrK/8MDKog3TySTBmckD+RObVxH0v4Tox67+F14PdED2oQ==
+
 shebang-command@^1.2.0:
   version "1.2.0"
   resolved "https://registry.npmmirror.com/shebang-command/-/shebang-command-1.2.0.tgz#44aac65b695b03398968c39f363fee5deafdf1ea"
@@ -10869,6 +10939,21 @@ style-loader@1.3.0:
     loader-utils "^2.0.0"
     schema-utils "^2.7.0"
 
+styled-components@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.npmmirror.com/styled-components/-/styled-components-6.1.0.tgz#228e3ab9c1ee1daa4b0a06aae30df0ed14fda274"
+  integrity sha512-VWNfYYBuXzuLS/QYEeoPgMErP26WL+dX9//rEh80B2mmlS1yRxRxuL5eax4m6ybYEUoHWlTy2XOU32767mlMkg==
+  dependencies:
+    "@emotion/is-prop-valid" "^1.2.1"
+    "@emotion/unitless" "^0.8.0"
+    "@types/stylis" "^4.0.2"
+    css-to-react-native "^3.2.0"
+    csstype "^3.1.2"
+    postcss "^8.4.31"
+    shallowequal "^1.1.0"
+    stylis "^4.3.0"
+    tslib "^2.5.0"
+
 stylehacks@^4.0.0:
   version "4.0.3"
   resolved "https://registry.npmmirror.com/stylehacks/-/stylehacks-4.0.3.tgz#6718fcaf4d1e07d8a1318690881e8d96726a71d5"
@@ -10877,6 +10962,11 @@ stylehacks@^4.0.0:
     browserslist "^4.0.0"
     postcss "^7.0.0"
     postcss-selector-parser "^3.0.0"
+
+stylis@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.npmmirror.com/stylis/-/stylis-4.3.0.tgz#abe305a669fc3d8777e10eefcfc73ad861c5588c"
+  integrity sha512-E87pIogpwUsUwXw7dNyU4QDjdgVMy52m+XEOPEKUn161cCzWjjhPSQhByfd1CcNvrOLnXQ6OnnZDwnJrz/Z4YQ==
 
 supports-color@^5.3.0:
   version "5.5.0"
@@ -11185,7 +11275,7 @@ tslib@^1.8.1:
   resolved "https://registry.npmmirror.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
-tslib@^2.0.3:
+tslib@^2.0.3, tslib@^2.5.0:
   version "2.6.2"
   resolved "https://registry.npmmirror.com/tslib/-/tslib-2.6.2.tgz#703ac29425e7b37cd6fd456e92404d46d1f3e4ae"
   integrity sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==
