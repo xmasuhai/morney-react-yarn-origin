@@ -22,7 +22,7 @@ export const App = () => {
               <Link to="/money">记账页</Link>
             </li>
             <li>
-              <Link to="/statistiscs">统计页</Link>
+              <Link to="/statistics">统计页</Link>
             </li>
           </ul>
         </nav>
@@ -36,7 +36,7 @@ export const App = () => {
           <Route path="/money">
             <Money />
           </Route>
-          <Route path="/statistiscs">
+          <Route path="/statistics">
             <Statistics />
           </Route>
           {/* 注意重定向组件的位置，放在Switch里面 */}
