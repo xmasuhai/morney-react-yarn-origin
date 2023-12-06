@@ -1,25 +1,28 @@
-@import 'style/var/var';
 //noinspection CssInvalidAtRule
 @import-normalize;
+@import 'style/var/var';
+@import 'style/helpers/font';
 
 * {margin: 0; padding: 0;}
-* {box-sizing: border-box;}
-*::before, *::after {box-sizing: border-box;}
 
-ul, ol {list-style: none;}
+* {box-sizing: border-box;}
+
+*::before,
+*::after {box-sizing: border-box;}
+
+ul,
+ol {list-style: none;}
 
 a {text-decoration: none; color: inherit;}
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
+  font-family: $font-hei;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: 1.2;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-  monospace;
+  font-family: $font-code;
 }
