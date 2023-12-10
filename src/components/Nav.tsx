@@ -1,5 +1,8 @@
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
+import x from 'assets/icons/edit.svg'
+
+console.log(x)
 
 const NavWrapper = styled.nav`
   line-height: 24px;
@@ -18,6 +21,7 @@ export const Nav = () => (
   <NavWrapper>
     <ul>
       <li>
+        <img src={x} alt="" />
         <Link to="/tags">标签页</Link>
       </li>
       <li>
