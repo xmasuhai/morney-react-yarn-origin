@@ -1,7 +1,7 @@
 //noinspection CssInvalidAtRule
 @import-normalize;
-@import 'style/var/var';
-@import 'style/helpers/font';
+@import 'assets/style/var/var';
+@import 'assets/style/helpers/font';
 
 * {margin: 0; padding: 0;}
 
@@ -25,4 +25,9 @@ body {
 
 code {
   font-family: $font-code;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
 }
