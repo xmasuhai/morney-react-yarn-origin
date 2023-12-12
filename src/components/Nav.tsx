@@ -1,18 +1,6 @@
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
-/*
-// eslint-disable-next-line
-import tag from 'assets/icons/bills.svg' // svgo-loader -> svg-sprite-loader
-// eslint-disable-next-line
-import edit from 'assets/icons/edit.svg'
-// eslint-disable-next-line
-import statistics from 'assets/icons/statistics.svg'
-// console.log(tag, edit, statistics,)
-import 'assets/icons/bills.svg'
-import 'assets/icons/edit.svg'
-import 'assets/icons/statistics.svg'
-*/
-
+// use requires for not tree-shaking svg
 require('assets/icons/bills.svg')
 require('assets/icons/edit.svg')
 require('assets/icons/statistics.svg')
