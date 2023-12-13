@@ -7,9 +7,11 @@ import {
   Route,
   Redirect,
 } from 'react-router-dom'
-import styled from 'styled-components'
-import {Nav} from 'components/Nav'
-import {Layout} from './components/Layout'
+import React from 'react'
+import {Tags} from './views/Tags'
+import {Money} from './views/Money'
+import {Statistics} from './views/Statistics'
+import {NoMatch} from './views/NoMatch'
 
 export const App = () => {
   return (
@@ -33,35 +35,4 @@ export const App = () => {
       </Switch>
     </Router>
   )
-}
-
-// 统计页面
-function Statistics() {
-  return (
-    <Layout>
-      <h2>统计页面</h2>
-    </Layout>
-  )
-}
-
-// 标签页面
-function Tags() {
-  return (
-    <Layout>
-      <h2>标签页面</h2>
-    </Layout>
-  )
-}
-
-// 记账页面
-function Money() {
-  return  (
-    <Layout>
-      <h2>记账页面</h2>
-    </Layout>
-  )
-}
-
-function NoMatch() {
-  return <h2>404</h2>
 }
