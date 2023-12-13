@@ -1,9 +1,6 @@
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
-// use requires for not tree-shaking svg
-require('assets/icons/bills.svg')
-require('assets/icons/edit.svg')
-require('assets/icons/statistics.svg')
+import {Icon} from './Icon'
 
 const NavWrapper = styled.nav`
   line-height: 24px;
@@ -19,11 +16,6 @@ const NavWrapper = styled.nav`
       justify-content: center;
       align-items: center;
       
-      .icon {
-        width: 24px;
-        height: 24px;
-      }
-      
     }
   }
 `
@@ -32,21 +24,15 @@ export const Nav = () => (
   <NavWrapper>
     <ul>
       <li>
-        <svg className="icon">
-          <use xlinkHref="#bills"></use>
-        </svg>
+        <Icon name='bills'/>
         <Link to="/tags">标签页</Link>
       </li>
       <li>
-        <svg className="icon">
-          <use xlinkHref="#edit"></use>
-        </svg>
+        <Icon name='edit'/>
         <Link to="/money">记账页</Link>
       </li>
       <li>
-        <svg className="icon">
-          <use xlinkHref="#statistics"></use>
-        </svg>
+        <Icon name='statistics'/>
         <Link to="/statistics">统计页</Link>
       </li>
     </ul>
