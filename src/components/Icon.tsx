@@ -28,7 +28,7 @@ const SVG = styled.svg`
 
 export const Icon = (props: Props) => {
   return (
-    <SVG>
+    <SVG className="icon">
       <use xlinkHref={`#${props.name}`}></use>
     </SVG>
   )

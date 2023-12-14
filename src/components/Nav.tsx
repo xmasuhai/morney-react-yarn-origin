@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import {Icon} from './Icon'
 
 const NavWrapper = styled.nav`
@@ -19,6 +19,11 @@ const NavWrapper = styled.nav`
         justify-content: center;
         align-items: center;
         padding: 4px 0 0;
+        
+        &.selected {
+          color: #f60;
+          svg {fill: #f60;}
+        }
       }
 
     }
@@ -29,22 +34,22 @@ export const Nav = () => (
   <NavWrapper>
     <ul>
       <li>
-        <Link to="/tags">
+        <NavLink to="/tags" activeClassName="selected">
           <Icon name="bills"/>
           标签页
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link to="/money">
+        <NavLink to="/money" activeClassName="selected">
           <Icon name="edit"/>
           记账页
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link to="/statistics">
+        <NavLink to="/statistics" activeClassName="selected">
           <Icon name="statistics"/>
           统计页
-        </Link>
+        </NavLink>
       </li>
     </ul>
   </NavWrapper>
