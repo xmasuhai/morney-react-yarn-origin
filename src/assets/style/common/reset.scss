@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-  line-height: 1.5;
   margin: 0;
   padding: 0;
 }
@@ -10,26 +9,19 @@
   box-sizing: border-box;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 ul,
-ol {
-  list-style: none;
-}
+ol {list-style: none;}
+
+a {text-decoration: none; color: inherit;}
 
 button,
 input {
-  border: 0;
+  border: 1px solid transparent;
   border-radius: 0;
   font: inherit;
 }
 
-:focus {
-  outline: none;
-}
+:focus {outline: none;}
 
 h1,
 h2,

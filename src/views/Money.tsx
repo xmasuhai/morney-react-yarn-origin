@@ -2,7 +2,32 @@ import React from 'react'
 import {Layout} from '../components/Layout'
 import styled from 'styled-components'
 
-const TagsSection = styled.section``
+const TagsSection = styled.section`
+  background-color: #fff;
+  padding: 12px 16px;
+
+  > ol {
+    margin: 0 -12px;
+
+    > li {
+      background-color: #d9d9d9;
+      border-radius: 18px;
+      display: inline-block;
+      padding: 3px 18px;
+      font-size: 14px;
+      margin: 8px 12px;
+    }
+  }
+
+  > button {
+    background-color: unset;
+    padding: 2px 4px;
+    margin-top: 8px;
+    border-bottom: 1px solid #333;
+    color: #666;
+
+  }
+`
 
 const NotesSection = styled.section``
 

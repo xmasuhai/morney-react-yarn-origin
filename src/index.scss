@@ -1,19 +1,8 @@
 //noinspection CssInvalidAtRule
 @import-normalize;
+@import 'assets/style/common/reset';
 @import 'assets/style/var/var';
 @import 'assets/style/helpers/font';
-
-* {margin: 0; padding: 0;}
-
-* {box-sizing: border-box;}
-
-*::before,
-*::after {box-sizing: border-box;}
-
-ul,
-ol {list-style: none;}
-
-a {text-decoration: none; color: inherit;}
 
 body {
   font-family: $font-hei;
@@ -21,11 +10,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
   line-height: 1.2;
+  background: #f5f5f5;
 }
 
-code {
-  font-family: $font-code;
-}
+code {font-family: $font-code;}
 
 .icon {
   width: 1em;

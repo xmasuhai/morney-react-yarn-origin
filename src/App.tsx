@@ -12,10 +12,16 @@ import {Tags} from './views/Tags'
 import {Money} from './views/Money'
 import {Statistics} from './views/Statistics'
 import {NoMatch} from './views/NoMatch'
+import styled from 'styled-components'
+
+const AppWrapper = styled.main`
+  color: #333;
+`
 
 export const App = () => {
   return (
-    <Router>
+    <AppWrapper>
+      <Router>
       <Switch>
         <Route path="/tags">
           <Tags/>
@@ -34,5 +40,6 @@ export const App = () => {
 
       </Switch>
     </Router>
+    </AppWrapper>
   )
 }
