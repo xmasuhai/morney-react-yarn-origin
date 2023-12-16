@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import {NavLink} from 'react-router-dom'
-import {Icon} from './Icon'
+import { NavLink } from 'react-router-dom'
+import { Icon } from './Icon'
 
 const NavWrapper = styled.nav`
   line-height: 24px;
@@ -19,7 +19,7 @@ const NavWrapper = styled.nav`
         justify-content: center;
         align-items: center;
         padding: 4px 0 0;
-        
+
         &.selected {
           color: #f60;
           svg {fill: #f60;}
@@ -35,19 +35,19 @@ export const Nav = () => (
     <ul>
       <li>
         <NavLink to="/tags" activeClassName="selected">
-          <Icon name="bills"/>
+          <Icon name="bills" />
           标签页
         </NavLink>
       </li>
       <li>
         <NavLink to="/money" activeClassName="selected">
-          <Icon name="edit"/>
+          <Icon name="edit" />
           记账页
         </NavLink>
       </li>
       <li>
         <NavLink to="/statistics" activeClassName="selected">
-          <Icon name="statistics"/>
+          <Icon name="statistics" />
           统计页
         </NavLink>
       </li>
