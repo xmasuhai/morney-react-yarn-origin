@@ -12,13 +12,14 @@ const Main = styled.main`
   overflow: auto;
 `
 type Props = {
-  children: any
+  children?: any;
+  className?: any;
 }
 
 export const Layout = (props: Props) => {
   return (
     <Wrapper>
-      <Main>
+      <Main className={ props.className}>
         { props.children }
       </Main>
       <Nav/>

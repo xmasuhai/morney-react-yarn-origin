@@ -3,6 +3,13 @@ import {Layout} from '../components/Layout'
 import styled from 'styled-components'
 
 const TagsSection = styled.section`
+  // parent flex
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  
   background-color: #fff;
   padding: 12px 16px;
 
@@ -134,10 +141,15 @@ const NumberPadSection = styled.section`
   }
 `
 
+const MyLayout = styled(Layout)`
+  display: flex;
+  flex-direction: column;
+`
+
 // 记账页面
 export function Money() {
   return  (
-    <Layout>
+    <MyLayout>
       <TagsSection>
         <ol>
           <li>衣</li>
@@ -178,6 +190,6 @@ export function Money() {
           <button>.</button>
         </div>
       </NumberPadSection>
-    </Layout>
+    </MyLayout>
   )
 }
