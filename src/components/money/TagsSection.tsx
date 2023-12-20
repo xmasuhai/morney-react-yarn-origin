@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 
 const TagsSectionStyled = styled.section`
   // parent flex
@@ -49,7 +49,7 @@ export const TagsSection: React.FC = (props) => {
   const [tags, setTags] = useState<string[]>(['衣', '食', '住', '行',])
   const onAddTag = () => {
     const newTagName = window.prompt('请输入新标签名称')
-    if(newTagName !== null) {
+    if (newTagName !== null) {
       setTags([...tags, newTagName,])
     }
   }
@@ -74,7 +74,7 @@ export const TagsSection: React.FC = (props) => {
 
   }
 
-  /* 获取选中表钱的样式 */
+  /* 获取选中标签的样式 */
   const getSelectedClass = (tag: string) => selectedTags.includes(tag) ? 'selected' : ''
 
   return (

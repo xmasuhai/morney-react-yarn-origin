@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import React, {useRef, useState} from 'react'
+import React, { useRef, useState } from 'react'
 
 const NoteSectionStyled = styled.section`
   background-color: #f5f5f5;
@@ -30,12 +30,10 @@ export const NoteSection: React.FC = () => {
   /* 备注输入功能 */
   const [note, setNote] = useState<string>('')
 
-  console.log("note: ", note);
-
   const inputRef = useRef<HTMLInputElement>(null)
 
   const changeNote = () => {
-    if(!inputRef.current) {return}
+    if (!inputRef.current) { return }
     setNote(inputRef.current.value)
   }
 
@@ -48,7 +46,7 @@ export const NoteSection: React.FC = () => {
           ref={inputRef}
           defaultValue={note}
           onBlur={changeNote}
-          placeholder="在这里添加备注"/>
+          placeholder="在这里添加备注" />
       </label>
     </NoteSectionStyled>
   )
