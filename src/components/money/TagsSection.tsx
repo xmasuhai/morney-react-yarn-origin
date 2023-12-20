@@ -57,16 +57,11 @@ export const TagsSection: React.FC = (props) => {
   /* 标签选中功能 */
   const [selectedTags, setSelectedTags] = useState<string[]>([])
 
+  /**
+   * 找出非当前点击的其他标签，即如果 tag 已被点击，就过滤出所有没有被点击的 tag，作为新的 selectedTags
+   * 否则，添加当前点击的 tag 到 selectedTags
+   **/
   const onToggleTag = (tag: string) => {
-    /*
-    // 找出非当前点击的其他标签，即如果 tag 已被点击，就过滤出所有没有被点击的 tag，作为新的 selectedTags
-    if(selectedTags.includes(tag)) {
-      setSelectedTags(selectedTags.filter(t => t !== tag))
-    } else {
-      // 否则，添加当前点击的 tag 到 selectedTags
-      setSelectedTags([...selectedTags, tag])
-    }
-    */
     const filteredTags = selectedTags.filter(t => t !== tag)
     const addedTags = [...selectedTags, tag]
 
