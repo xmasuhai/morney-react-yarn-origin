@@ -1,9 +1,6 @@
 import styled from 'styled-components'
 import React, {useState} from 'react'
 
-/**
- * 标签 模块
- * */
 const TagsSectionStyled = styled.section`
   // parent flex
   flex-grow: 1;
@@ -44,6 +41,9 @@ const TagsSectionStyled = styled.section`
   }
 `
 
+/**
+ * 标签 模块
+ * */
 export const TagsSection: React.FC = (props) => {
   /* 标签初始化 和 增删改功能 */
   const [tags, setTags] = useState<string[]>(['衣', '食', '住', '行',])
