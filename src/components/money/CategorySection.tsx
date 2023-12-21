@@ -36,9 +36,8 @@ export const CategorySectionStyled = styled.section`
  * */
 export const CategorySection: React.FC = () => {
   const categoryMap = {'income': '支出', 'expenditure': '收入',}
-  type categoryMapKey = keyof (typeof categoryMap)
   /* tab按钮 内容数组 */
-  const [categoryList,] = useState<categoryMapKey[]>(['income', 'expenditure',])
+  const [categoryList,] = useState(['income', 'expenditure',] as const)
 
   /* 切换 收入/支出 功能 */
   const [category, setCategory] = useState('income')
