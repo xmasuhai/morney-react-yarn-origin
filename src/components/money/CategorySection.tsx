@@ -1,23 +1,21 @@
 import styled from 'styled-components'
+import React, {useState} from 'react'
 
-/**
- * 收支切换 模块
- * */
-export const CategorySection = styled.section`
+export const CategorySectionStyled = styled.section`
   font-size: 24px;
-  
+
   > ul {
     display: flex;
     justify-content: center;
     background-color: #c4c4c4;
     position: relative;
-    
+
     > li {
       width: 50%;
       text-align: center;
       padding: 16px 0;
       position: relative;
-      
+
       &.selected::after {
         content: '';
         display: block;
@@ -28,7 +26,35 @@ export const CategorySection = styled.section`
         bottom: 0;
         width: 100%;
       }
-      
+
     }
   }
 `
+
+type IncomeExpenditureStr = 'income' | 'expenditure'
+
+/**
+ * 收支切换 模块
+ * */
+export const CategorySection: React.FC = () => {
+  /* tab按钮 内容数组 */
+  const [categoryList,] = useState<IncomeExpenditureStr[]>(['income', 'expenditure',])
+  const categoryMap = {'income': '支出', 'expenditure': '收入',}
+
+  /* 切换 收入/支出 功能 */
+  const [category, setCategory] = useState('income')
+
+  return (
+    <CategorySectionStyled>
+      <ul>
+        {categoryList.map(categoryStr => (
+          <li
+            className={category === categoryStr ? 'selected' : ''}
+            onClick={() => {setCategory(categoryStr)}}>
+            {categoryMap[categoryStr]}
+          </li>
+        ))}
+      </ul>
+    </CategorySectionStyled>
+  )
+}
