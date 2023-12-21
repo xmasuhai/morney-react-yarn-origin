@@ -31,15 +31,14 @@ export const CategorySectionStyled = styled.section`
   }
 `
 
-type IncomeExpenditureStr = 'income' | 'expenditure'
-
 /**
  * 收支切换 模块
  * */
 export const CategorySection: React.FC = () => {
-  /* tab按钮 内容数组 */
-  const [categoryList,] = useState<IncomeExpenditureStr[]>(['income', 'expenditure',])
   const categoryMap = {'income': '支出', 'expenditure': '收入',}
+  type categoryMapKey = keyof (typeof categoryMap)
+  /* tab按钮 内容数组 */
+  const [categoryList,] = useState<categoryMapKey[]>(['income', 'expenditure',])
 
   /* 切换 收入/支出 功能 */
   const [category, setCategory] = useState('income')
