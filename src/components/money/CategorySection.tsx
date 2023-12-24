@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import React, {useState} from 'react'
 
-export const CategorySectionStyled = styled.section`
+const CategoryStyled = styled.section`
   font-size: 24px;
 
   > ul {
@@ -34,7 +34,7 @@ export const CategorySectionStyled = styled.section`
 /**
  * 收支切换 模块
  * */
-export const CategorySection: React.FC = () => {
+export const Category: React.FC = () => {
   const categoryMap = {'income': '支出', 'expenditure': '收入',}
   /* tab按钮 内容数组 */
   const [categoryList,] = useState(['income', 'expenditure',] as const)
@@ -43,16 +43,17 @@ export const CategorySection: React.FC = () => {
   const [category, setCategory] = useState('income')
 
   return (
-    <CategorySectionStyled>
+    <CategoryStyled>
       <ul>
         {categoryList.map(categoryStr => (
           <li
+            key={categoryStr}
             className={category === categoryStr ? 'selected' : ''}
             onClick={() => {setCategory(categoryStr)}}>
             {categoryMap[categoryStr]}
           </li>
         ))}
       </ul>
-    </CategorySectionStyled>
+    </CategoryStyled>
   )
 }

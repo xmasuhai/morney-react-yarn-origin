@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import React, { useRef, useState } from 'react'
 
-const NoteSectionStyled = styled.section`
+const NoteStyled = styled.section`
   background-color: #f5f5f5;
   padding: 0 16px;
   font-size: 14px;
@@ -26,7 +26,7 @@ const NoteSectionStyled = styled.section`
 /**
  * 备注 模块
  * */
-export const NoteSection: React.FC = () => {
+export const Note: React.FC = () => {
   /* 备注输入功能 */
   const [note, setNote] = useState<string>('')
 
@@ -38,7 +38,7 @@ export const NoteSection: React.FC = () => {
   }
 
   return (
-    <NoteSectionStyled>
+    <NoteStyled>
       <label>
         <span>备注</span>
         <input
@@ -48,6 +48,6 @@ export const NoteSection: React.FC = () => {
           onBlur={changeNote}
           placeholder="在这里添加备注" />
       </label>
-    </NoteSectionStyled>
+    </NoteStyled>
   )
 }

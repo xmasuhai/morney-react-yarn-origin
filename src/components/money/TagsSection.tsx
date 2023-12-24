@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import React, { useState } from 'react'
 
-const TagsSectionStyled = styled.section`
+const TagsStyled = styled.section`
   // parent flex
   flex-grow: 1;
   display: flex;
@@ -44,7 +44,7 @@ const TagsSectionStyled = styled.section`
 /**
  * 标签 模块
  * */
-export const TagsSection: React.FC = (props) => {
+export const Tags: React.FC = (props) => {
   /* 标签初始化 和 增删改功能 */
   const [tags, setTags] = useState<string[]>(['衣', '食', '住', '行',])
   const onAddTag = () => {
@@ -73,7 +73,7 @@ export const TagsSection: React.FC = (props) => {
   const getSelectedClass = (tag: string) => selectedTags.includes(tag) ? 'selected' : ''
 
   return (
-    <TagsSectionStyled>
+    <TagsStyled>
       <ol>
         {
           tags.map((tag) => (
@@ -87,6 +87,6 @@ export const TagsSection: React.FC = (props) => {
         }
       </ol>
       <button onClick={onAddTag}>新增标签</button>
-    </TagsSectionStyled>
+    </TagsStyled>
   )
 }

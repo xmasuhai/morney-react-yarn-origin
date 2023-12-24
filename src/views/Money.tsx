@@ -1,10 +1,10 @@
 import React from 'react'
 import {Layout} from 'components/Layout'
 import styled from 'styled-components'
-import {TagsSection} from 'components/money/TagsSection'
-import {NoteSection} from 'components/money/NoteSection'
-import {NumberPadSection} from 'components/money/NumberPadSection'
-import {CategorySection} from 'components/money/CategorySection'
+import {Tags as TagsSection} from 'components/money/TagsSection'
+import {Note as NoteSection} from 'components/money/NoteSection'
+import {Category as CategorySection} from 'components/money/CategorySection'
+import {NumberPad as NumberPadSection } from 'components/money/NumberPadSection'
 
 const MyLayout = styled(Layout)`
   display: flex;
@@ -18,25 +18,7 @@ export function Money() {
       <TagsSection />
       <NoteSection />
       <CategorySection />
-      <NumberPadSection>
-        <div className="output">100</div>
-        <div className="pad clear-fix">
-          <button>1</button>
-          <button>2</button>
-          <button>3</button>
-          <button>删除</button>
-          <button>4</button>
-          <button>5</button>
-          <button>6</button>
-          <button>清空</button>
-          <button>7</button>
-          <button>8</button>
-          <button>9</button>
-          <button className="ok">OK</button>
-          <button className="zero">0</button>
-          <button>.</button>
-        </div>
-      </NumberPadSection>
+      <NumberPadSection />
     </MyLayout>
   )
 }
