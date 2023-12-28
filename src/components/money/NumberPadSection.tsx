@@ -42,7 +42,13 @@ const NumberPadStyled = styled.section`
  * 数字键盘
  * */
 export const NumberPad = () => {
-  const [output, setOutput] = useState('0')
+  const [output, _setOutput] = useState('0')
+  /* 统一处理 setOutput */
+  const setOutput = (output: string) => {
+    if(output.length > 16) {output = output.slice(0, 16)}
+    else if(output.length === 0) {output = '0'}
+    _setOutput(output)
+  }
 
   /* 事件代理 键盘点击事件 */
   const onClickButtonWrapper = (e: React.MouseEvent) => {
@@ -59,21 +65,25 @@ export const NumberPad = () => {
       case '7':
       case '8':
       case '9':
-      case '.':
         if(output === '0') {
           setOutput(text)
         } else {
           setOutput(output + text)
         }
         break
+      case '.':
+        if(output.includes('.')) {return}
+        setOutput(output + '.')
+        break;
       case 'OK':
         console.log('确认')
         break
       case '删除':
-        console.log('删除')
+        if(output.length === 1) {setOutput('')}
+        else {setOutput(output.slice(0, -1))}
         break
       case '清空':
-        console.log('清空')
+        setOutput('')
         break
 
     }
