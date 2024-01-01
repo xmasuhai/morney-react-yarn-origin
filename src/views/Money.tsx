@@ -25,14 +25,16 @@ export function Money() {
     amount: 0,
   })
 
+  // 选择标签变化时，更新moneyInfoObj
+  const onSelectTagsChange = (newTags: string[]) => {
+    setMoneyInfoObj({...moneyInfoObj, tags: newTags})
+  }
+
   return  (
     <MyLayout>
-      {/*{moneyInfoObj.tags.join(',')}*/}
       <TagsSection
         selectedTags={moneyInfoObj.tags}
-        onSelectTagsChange={(newTags) => {
-          setMoneyInfoObj({...moneyInfoObj, tags: newTags})
-        }}/>
+        onSelectTagsChange={onSelectTagsChange}/>
       <NoteSection />
       <CategorySection />
       <NumberPadSection />
