@@ -3,15 +3,13 @@ import {Layout} from 'components/Layout'
 import styled from 'styled-components'
 import {Tags as TagsSection} from 'components/money/TagsSection'
 import {Note as NoteSection} from 'components/money/NoteSection'
-import {Category as CategorySection} from 'components/money/CategorySection'
+import {Category as CategorySection, CategoryStr} from 'components/money/CategorySection'
 import {NumberPad as NumberPadSection } from 'components/money/NumberPadSection'
 
 const MyLayout = styled(Layout)`
   display: flex;
   flex-direction: column;
 `
-
-type CategoryStr = 'income' | 'expenditure'
 
 // 记账页面
 export function Money() {
@@ -30,14 +28,35 @@ export function Money() {
     setMoneyInfoObj({...moneyInfoObj, tags: newTags})
   }
 
+  const onNoteChange = (newNote: string) => {
+    setMoneyInfoObj({...moneyInfoObj, note: newNote})
+  }
+
+  const onCategoryChange = (newCategory: CategoryStr) => {
+    setMoneyInfoObj({...moneyInfoObj, category: newCategory})
+  }
+
+  const onAmountChange = (newAmount: number) => {
+    setMoneyInfoObj({...moneyInfoObj, amount: newAmount})
+  }
+
+  const onConfirm = () => { }
+
   return  (
     <MyLayout>
       <TagsSection
         selectedTags={moneyInfoObj.tags}
         onSelectTagsChange={onSelectTagsChange}/>
-      <NoteSection />
-      <CategorySection />
-      <NumberPadSection />
+      <NoteSection
+        noteValue={moneyInfoObj.note}
+        onNoteChange={onNoteChange}/>
+      <CategorySection
+        categoryValue={moneyInfoObj.category}
+        onCategoryChange={onCategoryChange}/>
+      <NumberPadSection
+        amountValue={moneyInfoObj.amount}
+        onAmountChange={onAmountChange}
+        onConfirm={onConfirm}/>
     </MyLayout>
   )
 }

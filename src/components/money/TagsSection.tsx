@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {TagsStyled} from '../tags/styled/TagsStyled'
+import {TagsStyled} from './styled/TagsStyled'
 
 type Props = {
   selectedTags: string[];
