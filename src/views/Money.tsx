@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import {Tags as TagsSection} from 'components/money/TagsSection'
 import {Note as NoteSection} from 'components/money/NoteSection'
 import {Category as CategorySection, CategoryStr} from 'components/money/CategorySection'
-import {NumberPad as NumberPadSection } from 'components/money/NumberPadSection'
+import {NumberPad as NumberPadSection} from 'components/money/NumberPadSection'
 
 const MyLayout = styled(Layout)`
   display: flex;
@@ -24,25 +24,20 @@ export function Money() {
   })
 
   // 选择标签变化时，更新moneyInfoObj
-  const onSelectTagsChange = (newTags: string[]) => {
-    setMoneyInfoObj({...moneyInfoObj, tags: newTags})
+  const onChange = (obj: Partial<typeof moneyInfoObj>) => {
+    setMoneyInfoObj({
+      ...moneyInfoObj,
+      ...obj,
+    })
   }
-
-  const onNoteChange = (newNote: string) => {
-    setMoneyInfoObj({...moneyInfoObj, note: newNote})
-  }
-
-  const onCategoryChange = (newCategory: CategoryStr) => {
-    setMoneyInfoObj({...moneyInfoObj, category: newCategory})
-  }
-
-  const onAmountChange = (newAmount: number) => {
-    setMoneyInfoObj({...moneyInfoObj, amount: newAmount})
-  }
+  const onSelectTagsChange = (tags: string[]) => {onChange({tags})}
+  const onNoteChange = (note: string) => {onChange({note}) }
+  const onCategoryChange = (category: CategoryStr) => {onChange({category})}
+  const onAmountChange = (amount: number) => {onChange({amount})}
 
   const onConfirm = () => { }
 
-  return  (
+  return (
     <MyLayout>
       <TagsSection
         selectedTags={moneyInfoObj.tags}
