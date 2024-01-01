@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Layout} from 'components/Layout'
 import styled from 'styled-components'
 import {Tags as TagsSection} from 'components/money/TagsSection'
@@ -11,11 +11,28 @@ const MyLayout = styled(Layout)`
   flex-direction: column;
 `
 
+type CategoryStr = 'income' | 'expenditure'
+
 // 记账页面
 export function Money() {
+  const [
+    moneyInfoObj,
+    setMoneyInfoObj,
+  ] = useState({
+    tags: [] as string[],
+    note: '',
+    category: 'income' as CategoryStr,
+    amount: 0,
+  })
+
   return  (
     <MyLayout>
-      <TagsSection />
+      {/*{moneyInfoObj.tags.join(',')}*/}
+      <TagsSection
+        selectedTags={moneyInfoObj.tags}
+        onSelectTagsChange={(newTags) => {
+          setMoneyInfoObj({...moneyInfoObj, tags: newTags})
+        }}/>
       <NoteSection />
       <CategorySection />
       <NumberPadSection />

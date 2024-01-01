@@ -29,7 +29,6 @@ export const NumberPad = () => {
       setOutput(genOutput(text as InputTextString , output))
     }
 
-
   }
 
   return (
