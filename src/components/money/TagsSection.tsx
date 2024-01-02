@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {TagsStyled} from './styled/TagsStyled'
+import {useTags} from './hooks/useTags'
 
 type Props = {
   selectedTags: string[];
@@ -11,7 +12,8 @@ type Props = {
  * */
 export const Tags: React.FC<Props> = (props) => {
   /* 标签初始化 和 增删改功能 */
-  const [tags, setTags] = useState<string[]>(['衣', '食', '住', '行',])
+  const {tags, setTags}= useTags()
+
   const onAddTag = () => {
     const newTagName = window.prompt('请输入新标签名称')
     if (newTagName !== null) {
