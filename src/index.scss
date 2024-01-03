@@ -25,3 +25,9 @@ code {font-family: $font-code;}
   display: block;
   clear: both;
 }
+
+.one-line {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

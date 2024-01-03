@@ -1,17 +1,29 @@
 import React from 'react'
 import {Layout} from 'components/Layout'
 import {useTags} from 'components/money/hooks/useTags'
+import {AddTagButton, CenterColumnBox, Space, TagsStyled} from 'views/styled/TagsStyled'
+import {Icon} from 'components/Icon'
 
 // 标签页面
 export function Tags() {
-  const {tags, setTags}= useTags()
-
+  const {tags, setTags} = useTags()
 
   return (
     <Layout>
-      <ol>
-        {tags.map(tag => (<li key={tag}>{tag}</li>))}
-      </ol>
+      <TagsStyled>
+        {tags.map(tag => (
+          <li key={tag}>
+            <span
+              className="one-line">{tag}很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长</span>
+            <Icon name="money_right"/>
+          </li>
+        ))}
+      </TagsStyled>
+      <CenterColumnBox>
+        <Space/>
+        <AddTagButton>新增标签</AddTagButton>
+        <Space/>
+      </CenterColumnBox>
     </Layout>
   )
 }
