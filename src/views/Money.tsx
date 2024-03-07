@@ -17,7 +17,7 @@ export function Money() {
     moneyInfoObj,
     setMoneyInfoObj,
   ] = useState({
-    tags: [] as string[],
+    tagIds: [] as number[],
     note: '',
     category: 'income' as CategoryStr,
     amount: 0,
@@ -30,7 +30,7 @@ export function Money() {
       ...obj,
     })
   }
-  const onSelectTagsChange = (tags: string[]) => {onChange({tags})}
+  const onSelectTagsChange = (tagIds: number[]) => {onChange({tagIds: tagIds})}
   const onNoteChange = (note: string) => {onChange({note}) }
   const onCategoryChange = (category: CategoryStr) => {onChange({category})}
   const onAmountChange = (amount: number) => {onChange({amount})}
@@ -40,7 +40,7 @@ export function Money() {
   return (
     <MyLayout>
       <TagsSection
-        selectedTags={moneyInfoObj.tags}
+        selectedTags={moneyInfoObj.tagIds}
         onSelectTagsChange={onSelectTagsChange}/>
       <NoteSection
         noteValue={moneyInfoObj.note}

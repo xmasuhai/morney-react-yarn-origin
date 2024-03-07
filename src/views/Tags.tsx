@@ -7,16 +7,16 @@ import {Link} from 'react-router-dom'
 
 // 标签页面
 export function Tags() {
-  const {tags, setTags} = useTags()
+  const {tags, /*setTags*/} = useTags()
 
   return (
     <Layout>
       <TagsStyled>
         {tags.map(tag => (
-          <li key={tag}>
-            <Link to={'/tags/' + tag}>
+          <li key={tag.id}>
+            <Link to={'/tags/' + tag.id}>
             <span
-              className="one-line">{tag}</span>
+              className="one-line">{tag.name}</span>
               <Icon name="money_right"/>
             </Link>
           </li>
