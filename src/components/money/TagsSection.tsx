@@ -28,7 +28,8 @@ export const Tags: React.FC<Props> = (props) => {
 
   /**
    * 切换选中tag
-   * 找出非当前点击的其他标签，即如果 tag 已被点击，就过滤出所有没有被点击的 tag，作为新的 selectedTags
+   * 找出非当前点击的其他标签，
+   * 即如果 tag 已被点击选中，就过滤出（复制出）所有没有被点击的 tag，作为新的 selectedTags
    * 否则，添加当前点击的 tag 到 selectedTags
    **/
   const onToggleTag = (tagId: number) => {
