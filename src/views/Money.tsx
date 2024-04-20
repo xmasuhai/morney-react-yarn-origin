@@ -35,7 +35,7 @@ export function Money() {
   const onCategoryChange = (category: CategoryStr) => {onChange({category})}
   const onAmountChange = (amount: number) => {onChange({amount})}
 
-  const onConfirm = () => { }
+  const onConfirm = () => {}
 
   return (
     <MyLayout>
