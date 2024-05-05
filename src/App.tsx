@@ -1,6 +1,3 @@
-/**
- * @Description 根组件
- * */
 import {
   HashRouter as Router,
   Switch,
@@ -19,6 +16,9 @@ const AppWrapper = styled.main`
   color: #333;
 `
 
+/**
+ * @Description 根组件
+ */
 export const App = () => {
   return (
     <AppWrapper>
