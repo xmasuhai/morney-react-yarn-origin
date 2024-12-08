@@ -5,11 +5,11 @@ import {
   Redirect,
 } from 'react-router-dom'
 import React from 'react'
+import styled from 'styled-components'
 import {Tags} from 'views/Tags'
 import {Money} from 'views/Money'
 import {Statistics} from 'views/Statistics'
 import {NoMatch} from 'views/NoMatch'
-import styled from 'styled-components'
 import {TagEdit} from 'views/TagEdit'
 
 const AppWrapper = styled.main`
