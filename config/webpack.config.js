@@ -1,3 +1,12 @@
+/**
+ * @Description:
+ * @Author: XuShuai xushuai1@palline.cn
+ * @Date: 2023-12-11 05:58:44
+ * @LastEditors: XuShuai
+ * @LastEditTime: 2024-12-08 13:41:02
+ * @FilePath: config/webpack.config.js
+ * Copyright (c) 2024 by palline, All Rights Reserved.
+ */
 'use strict'
 
 const fs = require('fs')
