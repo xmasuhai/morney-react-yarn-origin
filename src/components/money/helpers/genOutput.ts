@@ -1,4 +1,13 @@
+/**
+ * @Description:
+ * @Author: XuShuai xushuai1@palline.cn
+ * @Date: 2023-12-30 17:16:31
+ * @LastEditors: XuShuai
+ * @LastEditTime: 2024-12-08 13:42:31
+ * @FilePath: src/components/money/helpers/genOutput.ts
+ */
 export type InputTextString = '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '.' | '删除' | '清空'
+
 export const genOutput = (text: InputTextString, output = '0') => {
   switch (text) {
     case '0':

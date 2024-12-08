@@ -1,3 +1,11 @@
+/**
+ * @Description:
+ * @Author: XuShuai xushuai1@palline.cn
+ * @Date: 2023-12-14 06:45:29
+ * @LastEditors: XuShuai
+ * @LastEditTime: 2024-12-08 13:42:31
+ * @FilePath: src/views/Tags.tsx
+ */
 import React from 'react'
 import {Layout} from 'components/Layout'
 import {useTags} from 'components/money/hooks/useTags'
