@@ -17,7 +17,12 @@ const AppWrapper = styled.main`
 `
 
 /**
- * @Description 根组件
+ * @Description: 根组件
+ * @Author: XuShuai
+ * @Date: 2024-12-08 13:34:12
+ * @LastEditors: XuShuai
+ * @LastEditTime: 2024-12-08 16:59:05
+ * @FilePath: src/App.tsx
  */
 export const App = () => {
   return (

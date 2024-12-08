@@ -1,11 +1,3 @@
-/**
- * @Description:
- * @Author: XuShuai xushuai1@palline.cn
- * @Date: 2023-12-14 06:45:29
- * @LastEditors: XuShuai
- * @LastEditTime: 2024-12-08 13:42:31
- * @FilePath: src/views/Tags.tsx
- */
 import React from 'react'
 import {Layout} from 'components/Layout'
 import {useTags} from 'components/money/hooks/useTags'
@@ -13,7 +5,14 @@ import {AddTagButton, CenterColumnBox, Space, TagsStyled} from 'views/styled/Tag
 import {Icon} from 'components/Icon'
 import {Link} from 'react-router-dom'
 
-// 标签页面
+/**
+ * @Description: 标签页面
+ * @Author: XuShuai
+ * @Date: 2023-12-14 06:45:29
+ * @LastEditors: XuShuai
+ * @LastEditTime: 2024-12-08 17:22:15
+ * @FilePath: src/views/Tags.tsx
+ */
 export function Tags() {
   const {tags, /*setTags*/} = useTags()
 

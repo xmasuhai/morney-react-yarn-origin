@@ -11,7 +11,14 @@ const MyLayout = styled(Layout)`
   flex-direction: column;
 `
 
-// 记账页面
+/**
+ * @Description: 记账页面
+ * @Author: XuShuai
+ * @Date: 2023-12-14 06:45:40
+ * @LastEditors: XuShuai
+ * @LastEditTime: 2024-12-08 16:58:27
+ * @FilePath: src/views/Money.tsx
+ */
 export function Money() {
   const [
     moneyInfoObj,
