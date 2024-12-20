@@ -1,3 +1,11 @@
+/**
+ * @Description:
+ * @Author: XuShuai
+ * @Date: 2024-01-04 06:20:56
+ * @LastEditors: XuShuai
+ * @LastEditTime: 2024-12-20 22:13:40
+ * @FilePath: src/components/tags/styled/TagsStyled.tsx
+ */
 import styled from 'styled-components'
 
 export const TagsStyled = styled.ol`

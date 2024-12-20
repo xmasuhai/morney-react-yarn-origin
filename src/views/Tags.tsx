@@ -1,16 +1,15 @@
 import React from 'react'
 import {Layout} from 'components/Layout'
 import {useTags} from 'components/money/hooks/useTags'
-import {AddTagButton, CenterColumnBox, Space, TagsStyled} from 'views/styled/TagsStyled'
-import {Icon} from 'components/Icon'
-import {Link} from 'react-router-dom'
+import {TagList} from 'components/tags/TagList'
+import {AddTagSection} from 'components/tags/AddTagSection'
 
 /**
  * @Description: 标签页面
  * @Author: XuShuai
  * @Date: 2023-12-14 06:45:29
  * @LastEditors: XuShuai
- * @LastEditTime: 2024-12-08 17:22:15
+ * @LastEditTime: 2024-12-20 22:10:10
  * @FilePath: src/views/Tags.tsx
  */
 export function Tags() {
@@ -18,22 +17,8 @@ export function Tags() {
 
   return (
     <Layout>
-      <TagsStyled>
-        {tags.map(tag => (
-          <li key={tag.id}>
-            <Link to={'/tags/' + tag.id}>
-            <span
-              className="one-line">{tag.name}</span>
-              <Icon name="money_right"/>
-            </Link>
-          </li>
-        ))}
-      </TagsStyled>
-      <CenterColumnBox>
-        <Space/>
-        <AddTagButton>新增标签</AddTagButton>
-        <Space/>
-      </CenterColumnBox>
+      <TagList tags={tags}/>
+      <AddTagSection/>
     </Layout>
   )
 }

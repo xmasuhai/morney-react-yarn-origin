@@ -10,13 +10,12 @@ const MyLayout = styled(Layout)`
   display: flex;
   flex-direction: column;
 `
-
 /**
  * @Description: 记账页面
  * @Author: XuShuai
  * @Date: 2023-12-14 06:45:40
  * @LastEditors: XuShuai
- * @LastEditTime: 2024-12-08 16:58:27
+ * @LastEditTime: 2024-12-14 23:39:27
  * @FilePath: src/views/Money.tsx
  */
 export function Money() {
