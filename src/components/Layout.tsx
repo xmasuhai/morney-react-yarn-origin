@@ -11,6 +11,7 @@ const Main = styled.main`
   flex-grow: 1;
   overflow: auto;
 `
+
 type Props = {
   children?: any;
   className?: any;
@@ -21,7 +22,7 @@ type Props = {
  * @Author: XuShuai
  * @Date: 2023-12-14 06:31:20
  * @LastEditors: XuShuai
- * @LastEditTime: 2024-12-20 22:10:48
+ * @LastEditTime: 2024-12-21 19:09:42
  * @FilePath: src/components/Layout.tsx
  */
 export const Layout = (props: Props) => {
