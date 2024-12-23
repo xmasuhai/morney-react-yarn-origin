@@ -14,7 +14,7 @@
     "@pmmmwh/react-refresh-webpack-plugin": "0.4.3",
     "@svgr/webpack": "5.5.0",
     "@testing-library/jest-dom": "5.17.0",
-    "@testing-library/react": "13.4.0",
+    "@testing-library/react": "12.1.5",
     "@testing-library/user-event": "13.5.0",
     "@typescript-eslint/eslint-plugin": "^4.5.0",
     "@typescript-eslint/parser": "^4.5.0",
@@ -80,6 +80,7 @@
     "workbox-webpack-plugin": "5.1.4"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "7.21.11",
     "@babel/plugin-transform-private-property-in-object": "7.23.4",
     "@types/jest": "27.5.2",
     "@types/node": "16.18.59",
@@ -115,7 +116,7 @@
   },
   "jest": {
     "roots": [
-      "<rootDir>/src"
+      "<rootDir>/src/test"
     ],
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
