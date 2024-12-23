@@ -1,6 +1,14 @@
 import styled from 'styled-components'
 
 // noinspection CssUnusedSymbol
+/**
+ * @Description: 支出收入
+ * @Author: XuShuai
+ * @Date: 2024-01-01 20:16:16
+ * @LastEditors: XuShuai
+ * @LastEditTime: 2024-12-21 22:17:35
+ * @FilePath: src/components/money/styled/CategoryStyled.tsx
+ */
 export const CategoryStyled = styled.section`
   font-size: 24px;
 
@@ -24,7 +32,7 @@ export const CategoryStyled = styled.section`
         position: absolute;
         left: 0;
         bottom: 0;
-        width: 100%;
+        width: 100%; // 绝对定位 宽度设为100%
       }
 
     }

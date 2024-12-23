@@ -1,5 +1,13 @@
 import {css} from 'styled-components'
 
+/**
+ * @Description: 生成数字键盘按钮样式
+ * @Author: XuShuai
+ * @Date: 2023-12-25 06:36:42
+ * @LastEditors: XuShuai
+ * @LastEditTime: 2024-12-21 22:45:05
+ * @FilePath: src/components/money/styled/helpers/generateNthChildStyles.tsx
+ */
 export const generateNthChildStyles = () => {
   const styles = [];
   const colorsMap: Map<number, string> = new Map([
@@ -19,6 +27,7 @@ export const generateNthChildStyles = () => {
     [14, '#a9a9a9']
   ]);
 
+  // 遍历colorsMap,生成相应的CSS样式规侧
   for (let [key, value] of Array.from(colorsMap.entries())) {
     styles.push(css`
     &:nth-child(${key}) {

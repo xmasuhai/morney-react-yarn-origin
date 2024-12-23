@@ -9,8 +9,13 @@ type Props = {
 }
 
 /**
- * 收支切换 模块
- * */
+ * @Description: 收支切换 模块
+ * @Author: XuShuai
+ * @Date: 2023-12-19 05:42:33
+ * @LastEditors: XuShuai
+ * @LastEditTime: 2024-12-21 20:18:01
+ * @FilePath: src/components/money/CategorySection.tsx
+ */
 export const Category: React.FC<Props> = (props) => {
   const categoryMap = {'income': '支出', 'expenditure': '收入',}
   /* tab按钮 内容数组 */

@@ -9,8 +9,13 @@ type Props = {
 }
 
 /**
- * 数字键盘
- * */
+ * @Description: 数字键盘
+ * @Author: XuShuai
+ * @Date: 2023-12-19 05:42:44
+ * @LastEditors: XuShuai
+ * @LastEditTime: 2024-12-21 22:21:29
+ * @FilePath: src/components/money/NumberPadSection.tsx
+ */
 export const NumberPad: FC<Props> = (
   {
     amountValue,

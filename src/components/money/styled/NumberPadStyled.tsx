@@ -1,6 +1,14 @@
 import styled from 'styled-components'
 import {generateNthChildStyles} from './helpers/generateNthChildStyles'
 
+/**
+ * @Description: 数字键盘样式
+ * @Author: XuShuai
+ * @Date: 2023-12-30 17:10:48
+ * @LastEditors: XuShuai
+ * @LastEditTime: 2024-12-23 22:10:01
+ * @FilePath: src/components/money/styled/NumberPadStyled.tsx
+ */
 export const NumberPadStyled = styled.section`
   display: flex;
   flex-direction: column;
@@ -22,14 +30,13 @@ export const NumberPadStyled = styled.section`
       float: left;
       width: 25%;
       height: 64px;
+          cursor: pointer;
 
-      &.ok {
-        float: right;
-        height: 128px;
-      }
+          &.ok { float: right; height: 128px;}
 
       &.zero {width: 50%;}
 
+          // 导入按钮css样式代码块
       ${generateNthChildStyles()}
 
     }

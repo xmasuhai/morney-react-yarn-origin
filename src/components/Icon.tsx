@@ -26,7 +26,7 @@ const SVG = styled.svg`
  * @Author: XuShuai
  * @Date: 2023-12-14 05:26:20
  * @LastEditors: XuShuai
- * @LastEditTime: 2024-12-08 16:54:58
+ * @LastEditTime: 2024-12-23 21:58:21
  * @FilePath: src/components/Icon.tsx
  */
 export const Icon = (props: Props) => {

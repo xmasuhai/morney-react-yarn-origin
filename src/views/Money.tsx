@@ -3,19 +3,23 @@ import {Layout} from 'components/Layout'
 import styled from 'styled-components'
 import {Tags as TagsSection} from 'components/money/TagsSection'
 import {Note as NoteSection} from 'components/money/NoteSection'
-import {Category as CategorySection, CategoryStr} from 'components/money/CategorySection'
+import {
+  Category as CategorySection,
+  CategoryStr
+} from 'components/money/CategorySection'
 import {NumberPad as NumberPadSection} from 'components/money/NumberPadSection'
 
 const MyLayout = styled(Layout)`
   display: flex;
   flex-direction: column;
 `
+
 /**
  * @Description: 记账页面
  * @Author: XuShuai
  * @Date: 2023-12-14 06:45:40
  * @LastEditors: XuShuai
- * @LastEditTime: 2024-12-14 23:39:27
+ * @LastEditTime: 2024-12-21 20:19:13
  * @FilePath: src/views/Money.tsx
  */
 export function Money() {
@@ -30,16 +34,26 @@ export function Money() {
   })
 
   // 选择标签变化时，更新moneyInfoObj
-  const onChange = (obj: Partial<typeof moneyInfoObj>) => {
+  const onChange = (
+    obj: Partial<typeof moneyInfoObj>
+  ) => {
     setMoneyInfoObj({
       ...moneyInfoObj,
       ...obj,
     })
   }
-  const onSelectTagsChange = (tagIds: number[]) => {onChange({tagIds: tagIds})}
-  const onNoteChange = (note: string) => {onChange({note}) }
-  const onCategoryChange = (category: CategoryStr) => {onChange({category})}
-  const onAmountChange = (amount: number) => {onChange({amount})}
+  const onSelectTagsChange = (tagIds: number[]) => {
+    onChange({tagIds: tagIds})
+  }
+  const onNoteChange = (note: string) => {
+    onChange({note})
+  }
+  const onCategoryChange = (category: CategoryStr) => {
+    onChange({category})
+  }
+  const onAmountChange = (amount: number) => {
+    onChange({amount})
+  }
 
   const onConfirm = () => {}
 
