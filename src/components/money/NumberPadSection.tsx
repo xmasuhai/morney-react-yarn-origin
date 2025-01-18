@@ -2,10 +2,28 @@ import React, {FC, useState,} from 'react'
 import {NumberPadStyled} from './styled/NumberPadStyled'
 import {InputTextString, genOutput} from './helpers/genOutput'
 
-type Props = {
+export type Props = {
   amountValue: number;
   onAmountChange: (newAmount: number) => void;
   onConfirm?: () => void;
+}
+
+/** 统一处理 键盘输出 */
+export const use_setOutput = (
+  output: string,
+  setOutputValue: (newOutput: string) => void,
+  onAmountChange: (newAmount: number) => void,
+) => {
+  let newOutput: string
+  if(output.length > 16) {
+    newOutput = output.slice(0, 16)
+  } else if(output.length === 0) {
+    newOutput = '0'
+  } else {
+    newOutput = output
+  }
+  setOutputValue(newOutput)
+  onAmountChange(parseFloat(newOutput))
 }
 
 /**
@@ -13,10 +31,10 @@ type Props = {
  * @Author: XuShuai
  * @Date: 2023-12-19 05:42:44
  * @LastEditors: XuShuai
- * @LastEditTime: 2024-12-21 22:21:29
+ * @LastEditTime: 2025-01-18 21:52:43
  * @FilePath: src/components/money/NumberPadSection.tsx
  */
-export const NumberPad: FC<Props> = (
+export const NumberPadSection: FC<Props> = (
   {
     amountValue,
     onAmountChange,
@@ -25,15 +43,7 @@ export const NumberPad: FC<Props> = (
 ) => {
   const [outputValue, setOutputValue] = useState(`${amountValue}`)
 
-  /* 统一处理 setOutput */
-  const setOutput = (output: string) => {
-    let newOutput: string
-    if(output.length > 16) {newOutput = output.slice(0, 16)} else if(output.length === 0) {newOutput = '0'} else { newOutput = output }
-    setOutputValue(newOutput)
-    onAmountChange(parseFloat(newOutput))
-  }
-
-  /* 事件代理 键盘点击事件 */
+  /** 事件代理 键盘点击事件 */
   const onClickButtonWrapper = (e: React.MouseEvent) => {
     const text = (e.target as HTMLButtonElement).textContent
     if(!text) {return}
@@ -45,8 +55,17 @@ export const NumberPad: FC<Props> = (
     }
 
     // TODO 使用类型枚举优化
-    if('0123456789.'.split('').concat(['删除', '清空',]).includes(text)) {
-      setOutput(genOutput(text as InputTextString, outputValue))
+    const ifFitText = '0123456789.'
+      .split('')
+      .concat(['删除', '清空',])
+      .includes(text)
+
+    if(ifFitText) {
+      use_setOutput(
+        genOutput(text as InputTextString, outputValue),
+        setOutputValue,
+        onAmountChange,
+      )
     }
 
   }

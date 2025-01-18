@@ -2,11 +2,11 @@ import styled from 'styled-components'
 
 // noinspection CssUnusedSymbol
 /**
- * @Description: 支出收入
+ * @Description: 支出收入样式
  * @Author: XuShuai
  * @Date: 2024-01-01 20:16:16
  * @LastEditors: XuShuai
- * @LastEditTime: 2024-12-21 22:17:35
+ * @LastEditTime: 2025-01-18 21:04:40
  * @FilePath: src/components/money/styled/CategoryStyled.tsx
  */
 export const CategoryStyled = styled.section`

@@ -2,11 +2,11 @@ import styled from 'styled-components'
 
 // noinspection CssUnusedSymbol
 /**
- * @Description: 标签样式
+ * @Description: 标签模块样式
  * @Author: XuShuai
  * @Date: 2024-01-01 17:38:20
  * @LastEditors: XuShuai
- * @LastEditTime: 2024-12-21 21:26:36
+ * @LastEditTime: 2025-01-18 20:21:49
  * @FilePath: src/components/money/styled/TagsStyled.tsx
  */
 export const TagsStyled = styled.section`

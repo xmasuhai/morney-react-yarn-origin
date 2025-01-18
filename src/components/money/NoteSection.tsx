@@ -7,18 +7,19 @@ type Props = {
 }
 
 /**
- * @Description: 备注 模块
+ * @Description: 备注模块
  * @Author: XuShuai
  * @Date: 2023-12-19 05:42:17
  * @LastEditors: XuShuai
- * @LastEditTime: 2024-12-21 21:28:36
+ * @LastEditTime: 2025-01-18 20:31:59
  * @FilePath: src/components/money/NoteSection.tsx
  */
-export const Note: React.FC<Props> = (props) => {
-  /* 备注输入功能 */
+export const NoteSection: React.FC<Props> = (props) => {
   const noteValue = props.noteValue
-  const inputRef = useRef<HTMLInputElement>(null)
+  const inputRef =
+    useRef<HTMLInputElement>(null)
 
+  /* 备注输入功能 */
   const changeNote = () => {
     if(!inputRef.current) { return }
     props.onNoteChange(inputRef.current.value)

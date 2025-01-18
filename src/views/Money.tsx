@@ -2,13 +2,12 @@ import React, {useState} from 'react'
 import {Layout} from 'components/Layout'
 import styled from 'styled-components'
 import {TagsSection} from 'components/money/TagsSection'
-import {Note as NoteSection} from 'components/money/NoteSection'
+import {NoteSection} from 'components/money/NoteSection'
 import {
-
-  Category as CategorySection,
-  CategoryStr
+  CategorySection,
+  CategoryStr,
 } from 'components/money/CategorySection'
-import {NumberPad as NumberPadSection} from 'components/money/NumberPadSection'
+import {NumberPadSection} from 'components/money/NumberPadSection'
 
 const MyLayout = styled(Layout)`
   display: flex;
@@ -20,7 +19,7 @@ const MyLayout = styled(Layout)`
  * @Author: XuShuai
  * @Date: 2023-12-14 06:45:40
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-01-18 19:53:14
+ * @LastEditTime: 2025-01-18 21:37:08
  * @FilePath: src/views/Money.tsx
  */
 export function Money() {
@@ -30,7 +29,7 @@ export function Money() {
   ] = useState({
     tagIds: [] as number[],
     note: '',
-    category: 'income' as CategoryStr,
+    category: 'expenditure' as CategoryStr,
     amount: 0,
   })
 
