@@ -6,7 +6,7 @@ import {generateNthChildStyles} from './helpers/generateNthChildStyles'
  * @Author: XuShuai
  * @Date: 2023-12-30 17:10:48
  * @LastEditors: XuShuai
- * @LastEditTime: 2024-12-23 22:10:01
+ * @LastEditTime: 2025-01-18 19:53:14
  * @FilePath: src/components/money/styled/NumberPadStyled.tsx
  */
 export const NumberPadStyled = styled.section`

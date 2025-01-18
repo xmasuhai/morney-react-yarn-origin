@@ -12,10 +12,10 @@ type Props = {
  * @Author: XuShuai
  * @Date: 2023-12-19 05:42:04
  * @LastEditors: XuShuai
- * @LastEditTime: 2024-12-21 20:27:33
+ * @LastEditTime: 2025-01-04 19:53:20
  * @FilePath: src/components/money/TagsSection.tsx
  */
-export const Tags: React.FC<Props> = (props) => {
+export const TagsSection: React.FC<Props> = (props) => {
   /* 标签初始化 和 增删改功能 */
   const {tags, setTags} = useTags()
 
@@ -38,15 +38,19 @@ export const Tags: React.FC<Props> = (props) => {
    * 否则，添加当前点击的 tag 到 selectedTags
    **/
   const onToggleTag = (tagId: number) => {
-    const filteredTagIds = selectedTagIds.filter(t => t !== tagId)
+    const filteredTagIds = selectedTagIds
+      .filter(t => t !== tagId)
     const addedTagIds = [...selectedTagIds, tagId]
 
     // 触发父组件的事件
-    props.onSelectTagsChange(selectedTagIds.includes(tagId) ? filteredTagIds : addedTagIds)
+    props.onSelectTagsChange(
+      selectedTagIds.includes(tagId)
+        ? filteredTagIds
+        : addedTagIds)
 
   }
 
-  /* 获取选中标签的样式 */
+  /** 获取选中标签的样式 */
   const getSelectedClass = (tagId: number) =>
     selectedTagIds.includes(tagId) ? 'selected' : ''
 
