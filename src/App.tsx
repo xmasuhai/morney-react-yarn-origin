@@ -21,7 +21,7 @@ const AppWrapper = styled.main`
  * @Author: XuShuai
  * @Date: 2024-12-08 13:34:12
  * @LastEditors: XuShuai
- * @LastEditTime: 2024-12-08 16:59:05
+ * @LastEditTime: 2025-02-16 23:53:33
  * @FilePath: src/App.tsx
  */
 export const App = () => {
@@ -41,8 +41,10 @@ export const App = () => {
           <Route path="/statistics" exact>
             <Statistics/>
           </Route>
+
           {/* 注意重定向组件的位置，放在Switch里面 */}
           <Redirect exact from="/" to="money"/>
+          {/* 保底路由，放在最后 */}
           <Route path="*">
             <NoMatch/>
           </Route>

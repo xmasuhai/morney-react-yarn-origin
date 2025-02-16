@@ -19,7 +19,7 @@ const MyLayout = styled(Layout)`
  * @Author: XuShuai
  * @Date: 2023-12-14 06:45:40
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-01-18 21:37:08
+ * @LastEditTime: 2025-02-16 23:19:16
  * @FilePath: src/views/Money.tsx
  */
 export function Money() {
@@ -42,8 +42,8 @@ export function Money() {
       ...obj,
     })
   }
-  const onSelectTagsChange = (tagIds: number[]) => {
-    onChange({tagIds: tagIds})
+  const onSelectTagIdsChange = (tagIds: number[]) => {
+    onChange({tagIds})
   }
   const onNoteChange = (note: string) => {
     onChange({note})
@@ -60,8 +60,8 @@ export function Money() {
   return (
     <MyLayout>
       <TagsSection
-        selectedTags={moneyInfoObj.tagIds}
-        onSelectTagsChange={onSelectTagsChange}/>
+        selectedTagIds={moneyInfoObj.tagIds}
+        onSelectTagIdsChange={onSelectTagIdsChange}/>
       <NoteSection
         noteValue={moneyInfoObj.note}
         onNoteChange={onNoteChange}/>
