@@ -1,6 +1,7 @@
 import React, {FC, useState,} from 'react'
 import {NumberPadStyled} from './styled/NumberPadStyled'
 import {InputTextString, genOutput} from './helpers/genOutput'
+import {use_setOutput} from './hooks/use_setOutput'
 
 export type Props = {
   amountValue: number;
@@ -8,30 +9,12 @@ export type Props = {
   onConfirm?: () => void;
 }
 
-/** 统一处理 键盘输出 */
-export const use_setOutput = (
-  output: string,
-  setOutputValue: (newOutput: string) => void,
-  onAmountChange: (newAmount: number) => void,
-) => {
-  let newOutput: string
-  if(output.length > 16) {
-    newOutput = output.slice(0, 16)
-  } else if(output.length === 0) {
-    newOutput = '0'
-  } else {
-    newOutput = output
-  }
-  setOutputValue(newOutput)
-  onAmountChange(parseFloat(newOutput))
-}
-
 /**
  * @Description: 数字键盘
  * @Author: XuShuai
  * @Date: 2023-12-19 05:42:44
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-01-18 21:52:43
+ * @LastEditTime: 2025-02-16 14:33:37
  * @FilePath: src/components/money/NumberPadSection.tsx
  */
 export const NumberPadSection: FC<Props> = (
@@ -44,7 +27,9 @@ export const NumberPadSection: FC<Props> = (
   const [outputValue, setOutputValue] = useState(`${amountValue}`)
 
   /** 事件代理 键盘点击事件 */
-  const onClickButtonWrapper = (e: React.MouseEvent) => {
+  const onClickButtonWrapper = (
+    e: React.MouseEvent<HTMLDivElement>
+  ) => {
     const text = (e.target as HTMLButtonElement).textContent
     if(!text) {return}
 
