@@ -1,6 +1,6 @@
 import React from 'react'
 import {TagsStyled} from './styled/TagsStyled'
-import {useTags} from './hooks/useTags'
+import {useTags} from 'hooks/useTags'
 
 type Props = {
   selectedTags: number[];
@@ -12,7 +12,7 @@ type Props = {
  * @Author: XuShuai
  * @Date: 2023-12-19 05:42:04
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-01-18 20:33:58
+ * @LastEditTime: 2025-02-16 21:52:28
  * @FilePath: src/components/money/TagsSection.tsx
  */
 export const TagsSection: React.FC<Props> = (props) => {

@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import {Icon} from 'components/Icon'
 import {TagsStyled} from 'components/tags/styled/TagsStyled'
-import {TagObj} from 'components/money/hooks/useTags'
+import {TagObj} from 'hooks/useTags'
 
 interface TagListProps {
   tags: TagObj[]
@@ -13,7 +13,7 @@ interface TagListProps {
  * @Author: XuShuai
  * @Date: 2024-12-20 21:55:25
  * @LastEditors: XuShuai
- * @LastEditTime: 2024-12-20 22:00:10
+ * @LastEditTime: 2025-02-16 21:49:51
  * @FilePath: src/components/tags/TagList.tsx
  */
 export const TagList: React.FC<TagListProps> = ({tags}) => {

@@ -3,12 +3,12 @@ import {useState} from 'react'
 export type TagObj = {id: number, name: string}
 
 /**
- * @Description:
+ * @Description: 存储所有标签数据
  * @Author: XuShuai
  * @Date: 2024-01-03 06:52:17
  * @LastEditors: XuShuai
- * @LastEditTime: 2024-12-20 21:59:58
- * @FilePath: src/components/money/hooks/useTags.tsx
+ * @LastEditTime: 2025-02-16 21:50:24
+ * @FilePath: src/hooks/useTags.ts
  */
 export const useTags = () => {
   const [tags, setTags] = useState<TagObj[]>(
@@ -20,5 +20,8 @@ export const useTags = () => {
     ]
   )
 
-  return {tags, setTags}
+  return {
+    tags,
+    setTags
+  }
 }

@@ -1,13 +1,13 @@
+import styled from 'styled-components'
+
 /**
- * @Description:
+ * @Description: 标签页面 标签列表样式
  * @Author: XuShuai
  * @Date: 2024-01-04 06:20:56
  * @LastEditors: XuShuai
- * @LastEditTime: 2024-12-20 22:13:40
+ * @LastEditTime: 2025-02-16 21:57:04
  * @FilePath: src/components/tags/styled/TagsStyled.tsx
  */
-import styled from 'styled-components'
-
 export const TagsStyled = styled.ol`
   font-size: 16px;
   background-color: #fff;

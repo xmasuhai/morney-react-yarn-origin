@@ -1,7 +1,7 @@
 import React, {FC, useState,} from 'react'
 import {NumberPadStyled} from './styled/NumberPadStyled'
 import {InputTextString, genOutput} from './helpers/genOutput'
-import {use_setOutput} from './hooks/use_setOutput'
+import {changeOutput} from './helpers/changeOutput'
 
 export type Props = {
   amountValue: number;
@@ -14,7 +14,7 @@ export type Props = {
  * @Author: XuShuai
  * @Date: 2023-12-19 05:42:44
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-16 14:33:37
+ * @LastEditTime: 2025-02-16 22:21:38
  * @FilePath: src/components/money/NumberPadSection.tsx
  */
 export const NumberPadSection: FC<Props> = (
@@ -46,7 +46,7 @@ export const NumberPadSection: FC<Props> = (
       .includes(text)
 
     if(ifFitText) {
-      use_setOutput(
+      changeOutput(
         genOutput(text as InputTextString, outputValue),
         setOutputValue,
         onAmountChange,

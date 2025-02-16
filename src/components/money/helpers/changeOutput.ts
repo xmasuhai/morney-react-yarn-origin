@@ -3,10 +3,10 @@
  * @Author: XuShuai
  * @Date: 2025-02-16 14:32:29
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-16 14:33:19
- * @FilePath: src/components/money/hooks/use_setOutput.ts
+ * @LastEditTime: 2025-02-16 22:21:47
+ * @FilePath: src/components/money/helpers/changeOutput.ts
  */
-export const use_setOutput = (
+export const changeOutput = (
   output: string,
   setOutputValue: (newOutput: string) => void,
   onAmountChange: (newAmount: number) => void,
