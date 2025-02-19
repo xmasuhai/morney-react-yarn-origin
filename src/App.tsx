@@ -21,7 +21,7 @@ const AppWrapper = styled.main`
  * @Author: XuShuai
  * @Date: 2024-12-08 13:34:12
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-16 23:53:33
+ * @LastEditTime: 2025-02-19 20:19:17
  * @FilePath: src/App.tsx
  */
 export const App = () => {
@@ -32,7 +32,7 @@ export const App = () => {
           <Route path="/tags" exact>
             <Tags/>
           </Route>
-          <Route path="/tags/:tag" exact>
+          <Route path="/tags/:id" exact>
             <TagEdit/>
           </Route>
           <Route path="/money" exact>
