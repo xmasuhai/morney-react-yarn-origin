@@ -6,10 +6,9 @@ type Params = {
   id: string
 }
 export const TagEdit: React.FC = () => {
-  const {tags} = useTags()
+  const {findTag} = useTags()
   const {id} = useParams<Params>()
-
-  const tag = tags.find(tag => `${tag.id}` === id)
+  const tag = findTag(id)
 
   return (
     <>
