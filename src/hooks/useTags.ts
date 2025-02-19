@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import {createId} from 'lib/createId'
 
 export type TagObj = {id: number, name: string}
 
@@ -7,16 +8,16 @@ export type TagObj = {id: number, name: string}
  * @Author: XuShuai
  * @Date: 2024-01-03 06:52:17
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-16 21:50:24
+ * @LastEditTime: 2025-02-19 16:10:28
  * @FilePath: src/hooks/useTags.ts
  */
 export const useTags = () => {
   const [tags, setTags] = useState<TagObj[]>(
     [
-      {id: 1, name: '衣'},
-      {id: 2, name: '食'},
-      {id: 3, name: '住'},
-      {id: 4, name: '行'},
+      {id: createId(), name: '衣'},
+      {id: createId(), name: '食'},
+      {id: createId(), name: '住'},
+      {id: createId(), name: '行'},
     ]
   )
 

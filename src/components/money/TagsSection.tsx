@@ -1,6 +1,7 @@
 import React from 'react'
 import {TagsStyled} from './styled/TagsStyled'
 import {useTags} from 'hooks/useTags'
+import {createId} from 'lib/createId'
 
 type Props = {
   selectedTagIds: number[];
@@ -12,7 +13,7 @@ type Props = {
  * @Author: XuShuai
  * @Date: 2023-12-19 05:42:04
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-16 23:48:19
+ * @LastEditTime: 2025-02-19 16:10:17
  * @FilePath: src/components/money/TagsSection.tsx
  */
 export const TagsSection: React.FC<Props> = (props) => {
@@ -22,8 +23,8 @@ export const TagsSection: React.FC<Props> = (props) => {
   const onAddTag = () => {
     const newTagName = window.prompt('请输入新标签名称')
     if(newTagName !== null) {
-      // 暂时使用随机数作为 id；TODO: 后续改为 uuid
-      setTags([...tags, {id: Math.random(), name: newTagName},])
+      // 暂时使用随机数作为 id；
+      setTags([...tags, {id: createId(), name: newTagName},])
     }
   }
 
