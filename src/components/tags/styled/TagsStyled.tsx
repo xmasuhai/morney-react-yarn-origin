@@ -5,7 +5,7 @@ import styled from 'styled-components'
  * @Author: XuShuai
  * @Date: 2024-01-04 06:20:56
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-16 21:57:04
+ * @LastEditTime: 2025-02-22 11:51:14
  * @FilePath: src/components/tags/styled/TagsStyled.tsx
  */
 export const TagsStyled = styled.ol`
@@ -25,15 +25,6 @@ export const TagsStyled = styled.ol`
     }
 
   }
-`
-
-export const AddTagButton = styled.button`
-  font-size: 18px;
-  border: 1px solid transparent;
-  padding: 8px 12px;
-  background-color: #767676;
-  color: #fff;
-  border-radius: 4px;
 `
 
 export const CenterColumnBox = styled.div`

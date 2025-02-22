@@ -9,11 +9,11 @@ const importAll = (requireContext: __WebpackModuleApi.RequireContext) => {
 try {
   importAll(require.context('assets/icons', true, /\.svg$/))
 } catch (error) {
-  console.log(error)
+  console.error(error)
 }
 
 type Props = {
-  name: string
+  name?: string
 }
 
 const SVG = styled.svg`
@@ -26,13 +26,13 @@ const SVG = styled.svg`
  * @Author: XuShuai
  * @Date: 2023-12-14 05:26:20
  * @LastEditors: XuShuai
- * @LastEditTime: 2024-12-23 21:58:21
+ * @LastEditTime: 2025-02-22 13:59:33
  * @FilePath: src/components/Icon.tsx
  */
 export const Icon = (props: Props) => {
   return (
     <SVG className="icon">
-      <use xlinkHref={`#${props.name}`}></use>
+      {props.name && <use xlinkHref={`#${props.name}`}></use>}
     </SVG>
   )
 }
