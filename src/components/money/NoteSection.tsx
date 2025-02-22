@@ -1,5 +1,6 @@
 import React, {useRef,} from 'react'
 import {NoteStyled} from './styled/NoteStyled'
+import {LabelInput} from '../common/LabelInput'
 
 type Props = {
   noteValue: string,
@@ -11,7 +12,7 @@ type Props = {
  * @Author: XuShuai
  * @Date: 2023-12-19 05:42:17
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-01-18 20:31:59
+ * @LastEditTime: 2025-02-22 22:38:33
  * @FilePath: src/components/money/NoteSection.tsx
  */
 export const NoteSection: React.FC<Props> = (props) => {
@@ -27,6 +28,14 @@ export const NoteSection: React.FC<Props> = (props) => {
 
   return (
     <NoteStyled>
+      <LabelInput
+        label="备注"
+        type="text"
+        placeholder="在这里添加备注"
+        defaultValue={noteValue}
+        onBlur={changeNote}
+        ref={inputRef}/>
+      {/*
       <label>
         <span>备注</span>
         <input
@@ -36,6 +45,7 @@ export const NoteSection: React.FC<Props> = (props) => {
           onBlur={changeNote}
           placeholder="在这里添加备注"/>
       </label>
+      */}
     </NoteStyled>
   )
 }

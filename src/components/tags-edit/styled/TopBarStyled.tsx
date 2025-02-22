@@ -5,7 +5,7 @@ import styled from 'styled-components'
  * @Author: XuShuai
  * @Date: 2025-02-22 11:57:08
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-22 21:47:40
+ * @LastEditTime: 2025-02-22 21:55:14
  * @FilePath: src/components/tags-edit/styled/TopBarStyled.tsx
  */
 export const TopBarStyled = styled.header`
@@ -19,7 +19,6 @@ export const TopBarStyled = styled.header`
   & > .title {font-size: 16px;}
 
   // 使用伪元素实现标题居中
-
   &::after {
     content: '';
     display: block;
