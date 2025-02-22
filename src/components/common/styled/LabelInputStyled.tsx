@@ -5,7 +5,7 @@ import styled from 'styled-components'
  * @Author: XuShuai
  * @Date: 2025-02-22 21:00:39
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-22 22:00:38
+ * @LastEditTime: 2025-02-22 23:20:09
  * @FilePath: src/components/common/styled/LabelInputStyled.tsx
  */
 export const LabelInputStyled = styled.label`
@@ -17,7 +17,7 @@ export const LabelInputStyled = styled.label`
   > input {
     display: block;
     width: 100%;
-    height: 72px;
+    height: 44px;
     background-color: transparent;
   }
 `

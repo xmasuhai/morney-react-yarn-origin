@@ -5,7 +5,7 @@ import styled from 'styled-components'
  * @Author: XuShuai
  * @Date: 2024-01-04 06:20:56
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-22 11:51:14
+ * @LastEditTime: 2025-02-22 23:26:04
  * @FilePath: src/components/tags/styled/TagsStyled.tsx
  */
 export const TagsStyled = styled.ol`
@@ -25,15 +25,4 @@ export const TagsStyled = styled.ol`
     }
 
   }
-`
-
-export const CenterColumnBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`
-
-export const Space = styled.div`
-  height: 16px;
 `

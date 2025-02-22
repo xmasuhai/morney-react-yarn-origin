@@ -5,6 +5,10 @@ import {Layout} from 'components/Layout'
 import {Icon} from 'components/Icon'
 import {TagButtonStyled} from 'components/common/styled/TagButtonStyled'
 import {TopBarStyled} from 'components/tags-edit/styled/TopBarStyled'
+import {LabelInput} from '../components/common/LabelInput'
+import {LabelStyled} from '../components/tags-edit/styled/LabelStyled'
+import {CenterColumnBox} from '../components/common/styled/CenterColumnBox'
+import {Space} from '../components/common/styled/Space'
 
 type Params = {
   id: string
@@ -15,7 +19,7 @@ type Params = {
  * @Author: XuShuai
  * @Date: 2024-01-05 05:57:36
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-22 21:47:40
+ * @LastEditTime: 2025-02-22 23:29:28
  * @FilePath: src/views/TagEdit.tsx
  */
 export const TagEdit: React.FC = () => {
@@ -30,18 +34,18 @@ export const TagEdit: React.FC = () => {
         <h3 className="title">编辑标签</h3>
       </TopBarStyled>
 
-      <section>
-        <label>
-          <span>标签名</span>
-          <input
-            type="text"
-            placeholder={tag && tag.name}/>
-        </label>
-      </section>
+      <LabelStyled>
+        <LabelInput
+          label="标签名"
+          placeholder={tag && tag.name}/>
+      </LabelStyled>
 
-      <section>
-        <TagButtonStyled>删除</TagButtonStyled>
-      </section>
+      <CenterColumnBox>
+        <Space/>
+        <TagButtonStyled>
+          删除标签
+        </TagButtonStyled>
+      </CenterColumnBox>
     </Layout>
   )
 }

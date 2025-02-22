@@ -1,6 +1,6 @@
-import React, {ChangeEventHandler, /* useRef, */} from 'react'
-import {NoteStyled} from './styled/NoteStyled'
-import {LabelInput} from '../common/LabelInput'
+import React, {ChangeEventHandler,} from 'react'
+import {NoteStyled} from 'components/money/styled/NoteStyled'
+import {LabelInput} from 'components/common/LabelInput'
 
 type Props = {
   noteValue: string,
@@ -12,24 +12,14 @@ type Props = {
  * @Author: XuShuai
  * @Date: 2023-12-19 05:42:17
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-22 23:04:36
+ * @LastEditTime: 2025-02-22 23:06:30
  * @FilePath: src/components/money/NoteSection.tsx
  */
 export const NoteSection: React.FC<Props> = (props) => {
   const noteValue = props.noteValue
 
-  /*
-  const inputRef =
-    useRef<HTMLInputElement>(null)
-  */
-
   /* 备注输入功能 */
   const changeNote: ChangeEventHandler<HTMLInputElement> = (e) => {
-    /*
-    if(!inputRef.current) { return }
-    props.onNoteChange(inputRef.current.value)
-    */
-
     props.onNoteChange(e.target.value)
   }
 
