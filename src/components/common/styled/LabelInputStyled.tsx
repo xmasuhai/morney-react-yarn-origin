@@ -5,14 +5,19 @@ import styled from 'styled-components'
  * @Author: XuShuai
  * @Date: 2025-02-22 21:00:39
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-22 23:20:09
+ * @LastEditTime: 2025-02-23 21:48:07
  * @FilePath: src/components/common/styled/LabelInputStyled.tsx
  */
 export const LabelInputStyled = styled.label`
   display: flex;
   align-items: center;
+  font-size: 18px;
 
-  > span {margin-right: 16px; white-space: nowrap;}
+  > span {
+    margin-right: 16px;
+    white-space: nowrap;
+    padding-top: 3px;
+  }
 
   > input {
     display: block;

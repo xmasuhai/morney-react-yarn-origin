@@ -15,7 +15,7 @@ const defaultTags: TagObj[] = [
  * @Author: XuShuai
  * @Date: 2024-01-03 06:52:17
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-19 20:29:03
+ * @LastEditTime: 2025-02-23 20:55:52
  * @FilePath: src/hooks/useTags.ts
  */
 export const useTags = () => {
@@ -26,9 +26,23 @@ export const useTags = () => {
     return tags.find(tag => `${tag.id}` === id)
   }
 
+  /** 更新标签名称 */
+  const updateTagName = (
+    id: number,
+    name: string,
+  ) => {
+    const tagIndex = tags
+      .findIndex(tag => tag.id === id)
+    if(tagIndex === -1) {return}
+    const newTags = tags
+      .toSpliced(tagIndex, 1, {id, name})
+    setTags(newTags)
+  }
+
   return {
     tags,
     setTags,
-    findTag
+    findTag,
+    updateTagName,
   }
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {ChangeEventHandler} from 'react'
 import {useTags} from 'hooks/useTags'
 import {useParams} from 'react-router-dom'
 import {Layout} from 'components/common/Layout'
@@ -19,25 +19,34 @@ type Params = {
  * @Author: XuShuai
  * @Date: 2024-01-05 05:57:36
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-23 20:05:07
+ * @LastEditTime: 2025-02-23 21:48:07
  * @FilePath: src/views/TagEdit.tsx
  */
 export const TagEdit: React.FC = () => {
-  const {findTag} = useTags()
-  const {id} = useParams<Params>()
-  const tag = findTag(id)
+  const {findTag, updateTagName} = useTags()
+  const {id: idString} = useParams<Params>()
+  const tag = findTag(idString)
+  const changeTagName: ChangeEventHandler<HTMLInputElement> = (e) => {
+    if(!tag || !tag?.id) {return}
+    updateTagName(tag.id, e.target.value || '')
+  }
 
   return (
     <Layout>
       <TopBarStyled>
         <Icon name="money-left"/>
-        <h3 className="title">编辑标签</h3>
+        <h3 className="title">
+          编辑标签
+        </h3>
       </TopBarStyled>
 
       <LabelStyled>
         <LabelInput
+          type="text"
           label="标签名"
-          placeholder={tag && tag.name}/>
+          value={tag && tag.name}
+          onChange={changeTagName}
+          placeholder="请输入标签名"/>
       </LabelStyled>
 
       <CenterColumnBox>
