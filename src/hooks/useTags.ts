@@ -15,7 +15,7 @@ const defaultTags: TagObj[] = [
  * @Author: XuShuai
  * @Date: 2024-01-03 06:52:17
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-23 20:55:52
+ * @LastEditTime: 2025-02-23 21:59:25
  * @FilePath: src/hooks/useTags.ts
  */
 export const useTags = () => {
@@ -39,10 +39,17 @@ export const useTags = () => {
     setTags(newTags)
   }
 
+  /** 删除标签标 */
+  const deleteTag = (id: number) => {
+    setTags(tags
+      .filter(tag => tag.id !== id))
+  }
+
   return {
     tags,
     setTags,
     findTag,
     updateTagName,
+    deleteTag,
   }
 }

@@ -1,5 +1,5 @@
 import React, {ChangeEventHandler} from 'react'
-import {useTags} from 'hooks/useTags'
+import {TagObj, useTags} from 'hooks/useTags'
 import {useParams} from 'react-router-dom'
 import {Layout} from 'components/common/Layout'
 import {Icon} from 'components/common/Icon'
@@ -19,17 +19,36 @@ type Params = {
  * @Author: XuShuai
  * @Date: 2024-01-05 05:57:36
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-23 21:48:07
+ * @LastEditTime: 2025-02-23 22:06:16
  * @FilePath: src/views/TagEdit.tsx
  */
 export const TagEdit: React.FC = () => {
-  const {findTag, updateTagName} = useTags()
+  const {
+    findTag,
+    updateTagName,
+    deleteTag
+  } = useTags()
   const {id: idString} = useParams<Params>()
   const tag = findTag(idString)
   const changeTagName: ChangeEventHandler<HTMLInputElement> = (e) => {
     if(!tag || !tag?.id) {return}
     updateTagName(tag.id, e.target.value || '')
   }
+
+  const TagContent = (tag: TagObj) => (
+    <LabelInput
+      type="text"
+      label="标签名"
+      value={tag && tag.name}
+      onChange={changeTagName}
+      placeholder="请输入标签名"/>
+  )
+
+  const EmptyContent = () => (
+    <CenterColumnBox>
+      tag 不存在
+    </CenterColumnBox>
+  )
 
   return (
     <Layout>
@@ -41,17 +60,13 @@ export const TagEdit: React.FC = () => {
       </TopBarStyled>
 
       <LabelStyled>
-        <LabelInput
-          type="text"
-          label="标签名"
-          value={tag && tag.name}
-          onChange={changeTagName}
-          placeholder="请输入标签名"/>
+        {tag ? TagContent(tag) : EmptyContent()}
       </LabelStyled>
 
       <CenterColumnBox>
         <Space/>
-        <TagButtonStyled>
+        <TagButtonStyled
+          onClick={() => tag && deleteTag(tag.id)}>
           删除标签
         </TagButtonStyled>
       </CenterColumnBox>
