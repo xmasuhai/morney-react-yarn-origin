@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {Nav} from 'components/Nav'
+import {Nav} from 'components/common/Nav'
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -22,8 +22,8 @@ type Props = {
  * @Author: XuShuai
  * @Date: 2023-12-14 06:31:20
  * @LastEditors: XuShuai
- * @LastEditTime: 2024-12-21 19:09:42
- * @FilePath: src/components/Layout.tsx
+ * @LastEditTime: 2025-02-23 20:04:16
+ * @FilePath: src/components/common/Layout.tsx
  */
 export const Layout = (props: Props) => {
   return (

@@ -1,14 +1,14 @@
 import React from 'react'
 import {useTags} from 'hooks/useTags'
 import {useParams} from 'react-router-dom'
-import {Layout} from 'components/Layout'
-import {Icon} from 'components/Icon'
+import {Layout} from 'components/common/Layout'
+import {Icon} from 'components/common/Icon'
+import {LabelInput} from 'components/common/LabelInput'
 import {TagButtonStyled} from 'components/common/styled/TagButtonStyled'
 import {TopBarStyled} from 'components/tags-edit/styled/TopBarStyled'
-import {LabelInput} from '../components/common/LabelInput'
-import {LabelStyled} from '../components/tags-edit/styled/LabelStyled'
-import {CenterColumnBox} from '../components/common/styled/CenterColumnBox'
-import {Space} from '../components/common/styled/Space'
+import {LabelStyled} from 'components/tags-edit/styled/LabelStyled'
+import {CenterColumnBox} from 'components/common/styled/CenterColumnBox'
+import {Space} from 'components/common/styled/Space'
 
 type Params = {
   id: string
@@ -19,7 +19,7 @@ type Params = {
  * @Author: XuShuai
  * @Date: 2024-01-05 05:57:36
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-22 23:29:28
+ * @LastEditTime: 2025-02-23 20:05:07
  * @FilePath: src/views/TagEdit.tsx
  */
 export const TagEdit: React.FC = () => {

@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Layout} from 'components/Layout'
+import {Layout} from 'components/common/Layout'
 import styled from 'styled-components'
 import {TagsSection} from 'components/money/TagsSection'
 import {NoteSection} from 'components/money/NoteSection'
@@ -19,7 +19,7 @@ const MyLayout = styled(Layout)`
  * @Author: XuShuai
  * @Date: 2023-12-14 06:45:40
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-16 23:19:16
+ * @LastEditTime: 2025-02-23 20:02:11
  * @FilePath: src/views/Money.tsx
  */
 export function Money() {
