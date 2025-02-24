@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import React from 'react'
 
 // 批量导入 svg
 const importAll = (requireContext: __WebpackModuleApi.RequireContext) => {
@@ -14,7 +15,7 @@ try {
 
 type Props = {
   name?: string
-}
+} & React.SVGAttributes<SVGElement>
 
 const SVG = styled.svg`
   width: 24px;
@@ -26,13 +27,15 @@ const SVG = styled.svg`
  * @Author: XuShuai
  * @Date: 2023-12-14 05:26:20
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-22 13:59:33
- * @FilePath: src/components/Icon.tsx
+ * @LastEditTime: 2025-02-24 21:42:11
+ * @FilePath: src/components/common/Icon.tsx
  */
 export const Icon = (props: Props) => {
+  const {name, className, children, ...restProps} = props
+  
   return (
-    <SVG className="icon">
-      {props.name && <use xlinkHref={`#${props.name}`}></use>}
+    <SVG className={`icon ${className || ''}`} {...restProps}>
+      {name && <use xlinkHref={`#${name}`}></use>}
     </SVG>
   )
 }

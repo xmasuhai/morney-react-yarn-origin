@@ -19,7 +19,7 @@ type Params = {
  * @Author: XuShuai
  * @Date: 2024-01-05 05:57:36
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-23 22:06:16
+ * @LastEditTime: 2025-02-24 22:02:26
  * @FilePath: src/views/TagEdit.tsx
  */
 export const TagEdit: React.FC = () => {
@@ -50,10 +50,14 @@ export const TagEdit: React.FC = () => {
     </CenterColumnBox>
   )
 
+  const goBack = () => {}
+
   return (
     <Layout>
       <TopBarStyled>
-        <Icon name="money-left"/>
+        <Icon
+          name="money-left"
+          onClick={goBack}/>
         <h3 className="title">
           编辑标签
         </h3>
