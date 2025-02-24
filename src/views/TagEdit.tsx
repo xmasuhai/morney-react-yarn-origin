@@ -1,6 +1,6 @@
 import React, {ChangeEventHandler} from 'react'
 import {TagObj, useTags} from 'hooks/useTags'
-import {useParams} from 'react-router-dom'
+import {useParams, useHistory} from 'react-router-dom'
 import {Layout} from 'components/common/Layout'
 import {Icon} from 'components/common/Icon'
 import {LabelInput} from 'components/common/LabelInput'
@@ -19,7 +19,7 @@ type Params = {
  * @Author: XuShuai
  * @Date: 2024-01-05 05:57:36
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-24 22:13:39
+ * @LastEditTime: 2025-02-24 22:40:08
  * @FilePath: src/views/TagEdit.tsx
  */
 export const TagEdit: React.FC = () => {
@@ -50,7 +50,9 @@ export const TagEdit: React.FC = () => {
     </CenterColumnBox>
   )
 
-  const goBack = () => {window.history.back()}
+  const history = useHistory()
+
+  const goBack = () => {history.goBack()}
 
   return (
     <Layout>

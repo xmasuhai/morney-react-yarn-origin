@@ -10,12 +10,10 @@ import {ComponentPreviews, useInitial} from './dev'
  * @Author: XuShuai
  * @Date: 2023-10-28 19:52:35
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-24 22:36:51
+ * @LastEditTime: 2025-02-24 22:36:59
  * @FilePath: src/index.tsx
  */
 const div = document.getElementById('root')
-
-console.log('页面刷新啦=>(index.tsx:19) ')
 
 ReactDOM.render(
   <React.StrictMode>
