@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import React from 'react'
+import classnames from 'classnames'
 
 // 批量导入 svg
 const importAll = (requireContext: __WebpackModuleApi.RequireContext) => {
@@ -27,14 +28,14 @@ const SVG = styled.svg`
  * @Author: XuShuai
  * @Date: 2023-12-14 05:26:20
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-24 21:42:11
+ * @LastEditTime: 2025-02-24 22:05:53
  * @FilePath: src/components/common/Icon.tsx
  */
 export const Icon = (props: Props) => {
   const {name, className, children, ...restProps} = props
-  
+
   return (
-    <SVG className={`icon ${className || ''}`} {...restProps}>
+    <SVG className={classnames('icon', className)} {...restProps}>
       {name && <use xlinkHref={`#${name}`}></use>}
     </SVG>
   )
