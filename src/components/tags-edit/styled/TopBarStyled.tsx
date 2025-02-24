@@ -5,7 +5,7 @@ import styled from 'styled-components'
  * @Author: XuShuai
  * @Date: 2025-02-22 11:57:08
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-22 21:55:14
+ * @LastEditTime: 2025-02-24 22:36:51
  * @FilePath: src/components/tags-edit/styled/TopBarStyled.tsx
  */
 export const TopBarStyled = styled.header`
@@ -15,6 +15,8 @@ export const TopBarStyled = styled.header`
   line-height: 20px;
   padding: 14px;
   background-color: #fff;
+
+  & > .icon {cursor: pointer;}
 
   & > .title {font-size: 16px;}
 
