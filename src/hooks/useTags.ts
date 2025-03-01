@@ -15,7 +15,7 @@ const defaultTags: TagObj[] = [
  * @Author: XuShuai
  * @Date: 2024-01-03 06:52:17
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-24 21:12:53
+ * @LastEditTime: 2025-03-01 13:14:07
  * @FilePath: src/hooks/useTags.ts
  */
 export const useTags = () => {
@@ -43,11 +43,21 @@ export const useTags = () => {
     )
   }
 
+  /** 添加标签 */
+  const addTag = () => {
+    const newTagName = window.prompt('请输入新标签名称')
+    if(newTagName !== null) {
+      const newTagList = [...tags, {id: createId(), name: newTagName},]
+      setTags(newTagList)
+    }
+  }
+
   return {
     tags,
     setTags,
     findTag,
     updateTagName,
     deleteTag,
+    addTag,
   }
 }

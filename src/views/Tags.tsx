@@ -9,16 +9,16 @@ import {AddTagSection} from 'components/tags/AddTagSection'
  * @Author: XuShuai
  * @Date: 2023-12-14 06:45:29
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-23 20:01:51
+ * @LastEditTime: 2025-03-01 13:05:56
  * @FilePath: src/views/Tags.tsx
  */
-export function Tags() {
-  const {tags,} = useTags()
-
+export const Tags: React.FC = () => {
+  const {tags, addTag} = useTags()
   return (
     <Layout>
       <TagList tags={tags}/>
-      <AddTagSection/>
+      <AddTagSection
+        onChange={addTag}/>
     </Layout>
   )
 }
