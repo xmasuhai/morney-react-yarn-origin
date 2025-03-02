@@ -10,15 +10,15 @@ type Props = {
  * @Author: XuShuai
  * @Date: 2025-02-22 20:58:01
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-22 22:45:26
+ * @LastEditTime: 2025-03-02 13:39:09
  * @FilePath: src/components/common/LabelInput.tsx
  */
 export const LabelInput: React.FC<Props> = (props) => {
-  const {label, children, ...rest} = props
+  const {label, children: _children, ...rest} = props
 
   return (
     <LabelInputStyled>
-      <span>{props.label}</span>
+      <span>{label}</span>
       <input {...rest} />
     </LabelInputStyled>
   )
