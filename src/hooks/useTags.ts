@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import {createId} from 'lib/createId'
 
 export type TagObj = {id: number, name: string}
@@ -15,7 +15,7 @@ const defaultTags: TagObj[] = [
  * @Author: XuShuai
  * @Date: 2024-01-03 06:52:17
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-03-01 13:14:07
+ * @LastEditTime: 2025-03-08 16:11:00
  * @FilePath: src/hooks/useTags.ts
  */
 export const useTags = () => {
@@ -51,6 +51,25 @@ export const useTags = () => {
       setTags(newTagList)
     }
   }
+
+  /** 渲染时，读取 localStorage 中 tags */
+  useEffect(() => {
+    const localTags = JSON.parse(localStorage.getItem('tags') || '[]')
+    setTags(localTags)
+
+    console.log('first render_______________________')
+    console.log('=>(useTags.ts:61) localTags', localTags)
+    console.log('_______________________first render')
+  }, [])
+
+  /** 持久化写入：监听 tags 变化 并更新 localStorage */
+  useEffect(() => {
+    localStorage.setItem('tags', JSON.stringify(tags))
+
+    console.log('tags changed_______________________')
+    console.log('=>(useTags.ts:61) localTags', JSON.stringify(tags))
+    console.log('_______________________tags changed')
+  }, [tags])
 
   return {
     tags,

@@ -12,7 +12,7 @@ type Props = {
  * @Author: XuShuai
  * @Date: 2023-12-19 05:42:04
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-03-01 13:13:45
+ * @LastEditTime: 2025-03-08 15:29:41
  * @FilePath: src/components/money/TagsSection.tsx
  */
 export const TagsSection: React.FC<Props> = (props) => {
@@ -55,7 +55,7 @@ export const TagsSection: React.FC<Props> = (props) => {
               key={tag.id}
               onClick={() => onToggleTag(tag.id)}
               className={getSelectedClass(tag.id)}>
-              {tag.name}
+              {tag.id}:{tag.name}
             </li>
           ))
         }
