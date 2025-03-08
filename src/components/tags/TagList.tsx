@@ -13,7 +13,7 @@ interface TagListProps {
  * @Author: XuShuai
  * @Date: 2024-12-20 21:55:25
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-03-08 15:31:08
+ * @LastEditTime: 2025-03-08 20:47:02
  * @FilePath: src/components/tags/TagList.tsx
  */
 export const TagList: React.FC<TagListProps> = ({tags}) => {
@@ -24,7 +24,7 @@ export const TagList: React.FC<TagListProps> = ({tags}) => {
           <Link to={'/tags/' + tag.id}>
             <span
               className="one-line">
-              {tag.id}:{tag.name}
+              {tag.name}
             </span>
             <Icon name="money_right"/>
           </Link>
