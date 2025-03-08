@@ -1,5 +1,6 @@
 import {useEffect, useRef, useState} from 'react'
 import {createId} from 'lib/createId'
+import {useUpdate} from './useUpdate'
 
 export type TagObj = {id: number, name: string}
 
@@ -15,7 +16,7 @@ const defaultTags: TagObj[] = [
  * @Author: XuShuai
  * @Date: 2024-01-03 06:52:17
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-03-08 16:43:39
+ * @LastEditTime: 2025-03-08 17:29:00
  * @FilePath: src/hooks/useTags.ts
  */
 export const useTags = () => {
@@ -52,11 +53,13 @@ export const useTags = () => {
     }
   }
 
-  /** 记录是否首次变化，作为判断是否需要设置 tags 数据的一句，避免首次渲染时，触发 setTags */
+  /** 记录是否首次变化，作为判断是否需要设置 tags 数据的依据，避免首次渲染时，触发 setTags */
+  /*
   const count = useRef(0)
   useEffect(() => {
     count.current++
   })
+  */
 
   /** 渲染时，读取 localStorage 中 tags */
   useEffect(() => {
@@ -65,6 +68,7 @@ export const useTags = () => {
   }, [])
 
   /** 持久化写入：监听 tags 变化 并更新 localStorage */
+  /*
   useEffect(() => {
     if(count.current <= 1) {return}
     localStorage.setItem('tags', JSON.stringify(tags))
@@ -73,6 +77,22 @@ export const useTags = () => {
     console.log('=>(useTags.ts:74) tags', tags)
     console.log('_______________________tags changed')
   }, [tags])
+  */
+
+  /**
+   * 持久化写入：监听tags变化，并更新 localStorage
+   * 记录是否首次变化，作为判断是否需要设置 tags 数据的依据，避免首次渲染时，触发 setTags
+   * */
+  useUpdate(
+    () => {
+      localStorage.setItem('tags', JSON.stringify(tags))
+
+      console.log('tags changed_______________________')
+      console.log('=>(useTags.ts:74) tags', tags)
+      console.log('_______________________tags changed')
+    },
+    [tags]
+  )
 
   return {
     tags,
