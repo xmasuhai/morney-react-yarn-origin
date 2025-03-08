@@ -5,7 +5,7 @@ import {useEffect, useRef} from 'react'
  * @Author: XuShuai
  * @Date: 2025-03-08 16:45:49
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-03-08 17:29:00
+ * @LastEditTime: 2025-03-08 21:24:46
  * @FilePath: src/hooks/useUpdate.ts
  */
 export const useUpdate = (
@@ -21,5 +21,5 @@ export const useUpdate = (
         cb()
       }
     },
-    deps)
+    [cb, deps])
 }

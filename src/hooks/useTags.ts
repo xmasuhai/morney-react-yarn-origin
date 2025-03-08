@@ -1,4 +1,4 @@
-import {useEffect, useRef, useState} from 'react'
+import {useEffect, useState} from 'react'
 import {createId} from 'lib/createId'
 import {useUpdate} from './useUpdate'
 
@@ -9,7 +9,7 @@ export type TagObj = {id: number, name: string}
  * @Author: XuShuai
  * @Date: 2024-01-03 06:52:17
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-03-08 20:23:52
+ * @LastEditTime: 2025-03-08 21:29:28
  * @FilePath: src/hooks/useTags.ts
  */
 export const useTags = () => {
@@ -48,8 +48,8 @@ export const useTags = () => {
 
   /** 组件挂载时，初始化 tags 数据：读取 localStorage 中 tags */
   useEffect(() => {
-    const tagsInStorage = JSON.parse(localStorage.getItem('tags') || '[]')
-    const localTags = tagsInStorage?.length === 0
+    const tagsInStorage = JSON.parse(localStorage.getItem('tags') || '[]') as TagObj[]
+    const localTags: TagObj[] = tagsInStorage?.length === 0
       ? [
         {id: createId(), name: '衣'},
         {id: createId(), name: '食'},
@@ -68,7 +68,7 @@ export const useTags = () => {
     () => {
       localStorage.setItem('tags', JSON.stringify(tags))
     },
-    [tags]
+    tags
   )
 
   return {
