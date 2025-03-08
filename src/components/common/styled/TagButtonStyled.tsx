@@ -5,8 +5,8 @@ import styled from 'styled-components'
  * @Author: XuShuai
  * @Date: 2025-02-22 11:49:02
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-22 21:33:25
- * @FilePath: src/components/TagButtonStyled.tsx
+ * @LastEditTime: 2025-03-08 15:31:42
+ * @FilePath: src/components/common/styled/TagButtonStyled.tsx
  */
 export const TagButtonStyled = styled.button`
   font-size: 18px;
@@ -15,4 +15,5 @@ export const TagButtonStyled = styled.button`
   background-color: #767676;
   color: #fff;
   border-radius: 4px;
+  cursor: pointer;
 `
