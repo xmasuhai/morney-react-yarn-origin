@@ -9,7 +9,7 @@ export type TagObj = {id: number, name: string}
  * @Author: XuShuai
  * @Date: 2024-01-03 06:52:17
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-03-08 21:29:28
+ * @LastEditTime: 2025-03-23 13:46:06
  * @FilePath: src/hooks/useTags.ts
  */
 export const useTags = () => {
@@ -46,7 +46,9 @@ export const useTags = () => {
     }
   }
 
-  /** 组件挂载时，初始化 tags 数据：读取 localStorage 中 tags */
+  /**
+   * 组件挂载时，初始化 tags 数据：读取 localStorage 中 tags
+   */
   useEffect(() => {
     const tagsInStorage = JSON.parse(localStorage.getItem('tags') || '[]') as TagObj[]
     const localTags: TagObj[] = tagsInStorage?.length === 0
@@ -63,7 +65,7 @@ export const useTags = () => {
   /**
    * 持久化写入：监听tags变化，并更新 localStorage
    * 记录是否首次变化，作为判断是否需要设置 tags 数据的依据，避免首次渲染时，触发 setTags
-   * */
+   */
   useUpdate(
     () => {
       localStorage.setItem('tags', JSON.stringify(tags))

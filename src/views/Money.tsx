@@ -8,32 +8,36 @@ import {
   CategoryStr,
 } from 'components/money/CategorySection'
 import {NumberPadSection} from 'components/money/NumberPadSection'
+import {useRecords} from '../hooks/useRecords'
 
 const MyLayout = styled(Layout)`
   display: flex;
   flex-direction: column;
 `
 
+/** 初始默认记账信息 */
+const defaultMoneyInfoObj = {
+  tagIds: [] as number[],
+  note: '',
+  category: 'expenditure' as CategoryStr,
+  amount: 0,
+}
+
 /**
  * @Description: 记账页面
  * @Author: XuShuai
  * @Date: 2023-12-14 06:45:40
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-23 20:02:11
+ * @LastEditTime: 2025-03-23 13:38:28
  * @FilePath: src/views/Money.tsx
  */
-export function Money() {
+export const Money = () => {
   const [
     moneyInfoObj,
     setMoneyInfoObj,
-  ] = useState({
-    tagIds: [] as number[],
-    note: '',
-    category: 'expenditure' as CategoryStr,
-    amount: 0,
-  })
+  ] = useState(defaultMoneyInfoObj)
 
-  // 选择标签变化时，更新moneyInfoObj
+  // 选择标签变化时，更新 moneyInfoObj
   const onChange = (
     obj: Partial<typeof moneyInfoObj>
   ) => {
@@ -55,10 +59,28 @@ export function Money() {
     onChange({amount})
   }
 
-  const onConfirm = () => {}
+  const {records, addRecord,} = useRecords()
+
+  /** 点击 ok 确认保存记录 */
+  const onConfirm = () => {
+    addRecord(moneyInfoObj)
+
+    console.log('onConfirm_______________________')
+    console.log('此时的 records 为之前空的 records')
+    console.log('并不是合并后新的 records')
+    console.log('=>(Money.tsx:67) records', records)
+    console.log('_______________________onConfirm')
+  }
+
+  console.log('执行 Money() 重新渲染时_______________________')
+  console.log('此时的 records 为新的 records')
+  console.log('=>(Money.tsx:67) records', records)
+  console.log('_______________________执行 Money() 重新渲染时')
 
   return (
     <MyLayout>
+      {/* 调试 */}
+      {JSON.stringify(moneyInfoObj)}
       <TagsSection
         selectedTagIds={moneyInfoObj.tagIds}
         onSelectTagIdsChange={onSelectTagIdsChange}/>
