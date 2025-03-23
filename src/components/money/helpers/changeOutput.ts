@@ -3,12 +3,12 @@
  * @Author: XuShuai
  * @Date: 2025-02-16 14:32:29
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-16 22:21:47
+ * @LastEditTime: 2025-03-23 22:24:02
  * @FilePath: src/components/money/helpers/changeOutput.ts
  */
 export const changeOutput = (
   output: string,
-  setOutputValue: (newOutput: string) => void,
+  // setOutputValue: (newOutput: string) => void,
   onAmountChange: (newAmount: number) => void,
 ) => {
   let newOutput: string
@@ -19,6 +19,6 @@ export const changeOutput = (
   } else {
     newOutput = output
   }
-  setOutputValue(newOutput)
+  // setOutputValue(newOutput)
   onAmountChange(parseFloat(newOutput))
 }

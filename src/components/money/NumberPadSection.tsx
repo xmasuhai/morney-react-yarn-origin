@@ -14,7 +14,7 @@ export type Props = {
  * @Author: XuShuai
  * @Date: 2023-12-19 05:42:44
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-16 22:21:38
+ * @LastEditTime: 2025-03-23 22:25:40
  * @FilePath: src/components/money/NumberPadSection.tsx
  */
 export const NumberPadSection: FC<Props> = (
@@ -24,8 +24,11 @@ export const NumberPadSection: FC<Props> = (
     onConfirm,
   }
 ) => {
-  const [outputValue, setOutputValue] = useState(`${amountValue}`)
+  // bug 过期的闭包
+  // const [outputValue, setOutputValue] = useState(`${amountValue}`)
 
+  const outputValue = amountValue.toString()
+  
   /** 事件代理 键盘点击事件 */
   const onClickButtonWrapper = (
     e: React.MouseEvent<HTMLDivElement>
@@ -34,7 +37,6 @@ export const NumberPadSection: FC<Props> = (
     if(!text) {return}
 
     if(text === 'OK') {
-      // TODO 提交逻辑
       onConfirm && onConfirm()
       return
     }
@@ -48,7 +50,7 @@ export const NumberPadSection: FC<Props> = (
     if(ifFitText) {
       changeOutput(
         genOutput(text as InputTextString, outputValue),
-        setOutputValue,
+        // setOutputValue,
         onAmountChange,
       )
     }

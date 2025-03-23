@@ -7,20 +7,28 @@ type AccountRecordItem = {
   note: string
   category: CategoryStr
   amount: number
+  createdAt: string // ISO 8601
+  // updatedAt: string
 }
+
+type AccountRecordItemOmitTime = Omit<AccountRecordItem, 'createdAt' | 'updatedAt'>
 
 /**
  * @Description: 记账记录逻辑
  * @Author: XuShuai
  * @Date: 2025-03-23 12:42:05
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-03-23 13:45:16
+ * @LastEditTime: 2025-03-23 22:33:26
  * @FilePath: src/hooks/useRecords.ts
  */
 export const useRecords = () => {
   const [records, setRecords] = useState<AccountRecordItem[]>([])
 
-  const addRecord = (record: AccountRecordItem) => {
+  const addRecord = (newRecord: AccountRecordItemOmitTime) => {
+    const record = {
+      ...newRecord,
+      createdAt: new Date().toISOString()
+    }
     setRecords([...records, record])
   }
 
