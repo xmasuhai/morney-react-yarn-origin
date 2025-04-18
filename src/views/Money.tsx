@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from 'react'
+import React, {useState} from 'react'
 import {Layout} from 'components/common/Layout'
 import styled from 'styled-components'
 import {TagsSection} from 'components/money/TagsSection'
@@ -28,7 +28,7 @@ const defaultMoneyInfoObj = {
  * @Author: XuShuai
  * @Date: 2023-12-14 06:45:40
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-03-23 22:04:56
+ * @LastEditTime: 2025-03-30 15:47:14
  * @FilePath: src/views/Money.tsx
  */
 export const Money = () => {

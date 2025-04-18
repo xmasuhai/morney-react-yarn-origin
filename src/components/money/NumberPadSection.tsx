@@ -1,7 +1,7 @@
-import React, {FC, useState,} from 'react'
-import {NumberPadStyled} from './styled/NumberPadStyled'
-import {InputTextString, genOutput} from './helpers/genOutput'
-import {changeOutput} from './helpers/changeOutput'
+import React, {FC,} from 'react'
+import {NumberPadStyled} from 'components/money/styled/NumberPadStyled'
+import {InputTextString, genOutput} from 'components/money/helpers/genOutput'
+import {changeOutput} from 'components/money/helpers/changeOutput'
 
 export type Props = {
   amountValue: number;
@@ -14,7 +14,7 @@ export type Props = {
  * @Author: XuShuai
  * @Date: 2023-12-19 05:42:44
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-03-23 22:25:40
+ * @LastEditTime: 2025-03-30 15:46:55
  * @FilePath: src/components/money/NumberPadSection.tsx
  */
 export const NumberPadSection: FC<Props> = (
@@ -24,11 +24,8 @@ export const NumberPadSection: FC<Props> = (
     onConfirm,
   }
 ) => {
-  // bug 过期的闭包
-  // const [outputValue, setOutputValue] = useState(`${amountValue}`)
-
   const outputValue = amountValue.toString()
-  
+
   /** 事件代理 键盘点击事件 */
   const onClickButtonWrapper = (
     e: React.MouseEvent<HTMLDivElement>
