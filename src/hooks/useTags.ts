@@ -4,12 +4,19 @@ import {useUpdate} from './useUpdate'
 
 export type TagObj = { id: number, name: string }
 
+const genDefaultTags: () => TagObj[] = () => [
+  {id: createId(), name: '衣'},
+  {id: createId(), name: '食'},
+  {id: createId(), name: '住'},
+  {id: createId(), name: '行'},
+]
+
 /**
  * @Description: 存储所有标签数据
  * @Author: XuShuai
  * @Date: 2024-01-03 06:52:17
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-05-04 15:23:41
+ * @LastEditTime: 2025-05-04 17:19:50
  * @FilePath: src/hooks/useTags.ts
  */
 export const useTags = () => {
@@ -45,24 +52,26 @@ export const useTags = () => {
   /** 添加标签 */
   const addTag = () => {
     const newTagName = window.prompt('请输入新标签名称')
+    // 用户输入有效字符串
     if(newTagName !== null && (newTagName.trim() !== '')) {
-      const newTagList = [...tags, {id: createId(), name: newTagName},]
+      const newTagList = [
+        ...tags,
+        // 自增id
+        {id: createId(), name: newTagName,},
+      ]
       setTags(newTagList)
     }
   }
 
   /**
    * 组件挂载时，初始化 tags 数据：读取 localStorage 中 tags
+   * 任何使用当前组件都会执行两次本挂载逻辑
    */
   useEffect(() => {
     const tagsInStorage = JSON.parse(localStorage.getItem('tags') || '[]') as TagObj[]
+    // 防止tags重名
     const localTags: TagObj[] = tagsInStorage?.length === 0
-      ? [
-        {id: createId(), name: '衣'},
-        {id: createId(), name: '食'},
-        {id: createId(), name: '住'},
-        {id: createId(), name: '行'},
-      ]
+      ? genDefaultTags()
       : tagsInStorage
     setTags(localTags)
   }, [])

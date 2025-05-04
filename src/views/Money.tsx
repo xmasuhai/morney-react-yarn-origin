@@ -28,7 +28,7 @@ const defaultMoneyInfoObj = {
  * @Author: XuShuai
  * @Date: 2023-12-14 06:45:40
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-03-30 15:47:14
+ * @LastEditTime: 2025-05-04 17:22:12
  * @FilePath: src/views/Money.tsx
  */
 export const Money = () => {
@@ -70,10 +70,6 @@ export const Money = () => {
 
   return (
     <MyLayout>
-      {/* 调试 */}
-      {JSON.stringify(moneyInfoObj)}
-      <br/>
-      <>{moneyInfoObj.amount}</>
       <TagsSection
         selectedTagIds={moneyInfoObj.tagIds}
         onSelectTagIdsChange={onSelectTagIdsChange}/>
