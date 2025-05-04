@@ -28,7 +28,7 @@ const defaultMoneyInfoObj = {
  * @Author: XuShuai
  * @Date: 2023-12-14 06:45:40
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-05-04 18:04:17
+ * @LastEditTime: 2025-05-04 18:48:41
  * @FilePath: src/views/Money.tsx
  */
 export const Money = () => {
@@ -63,7 +63,8 @@ export const Money = () => {
 
   /** 点击 ok 确认保存记录 */
   const onConfirm = () => {
-    addRecord(moneyInfoObj)
+    const result = addRecord(moneyInfoObj)
+    if(result === 'failure') {return}
     alert('保存成功')
     // 重置记账信息
     setMoneyInfoObj({...defaultMoneyInfoObj})
