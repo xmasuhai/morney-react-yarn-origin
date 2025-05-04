@@ -2,14 +2,14 @@ import {useEffect, useState} from 'react'
 import {createId} from 'lib/createId'
 import {useUpdate} from './useUpdate'
 
-export type TagObj = {id: number, name: string}
+export type TagObj = { id: number, name: string }
 
 /**
  * @Description: 存储所有标签数据
  * @Author: XuShuai
  * @Date: 2024-01-03 06:52:17
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-03-23 13:46:06
+ * @LastEditTime: 2025-05-04 15:23:41
  * @FilePath: src/hooks/useTags.ts
  */
 export const useTags = () => {
@@ -23,10 +23,15 @@ export const useTags = () => {
   /** 更新标签名称 */
   const updateTagName = (
     id: number,
-    name: string,
+    newName: string,
   ) => {
-    setTags(tags
-      .map(tag => tag.id === id ? {...tag, name} : tag)
+    setTags(
+      tags
+        .map(tag =>
+          tag.id === id
+            ? {...tag, name: newName}
+            : tag
+        )
     )
   }
 
