@@ -6,6 +6,7 @@ export type CategoryStr = 'income' | 'expenditure'
 type Props = {
   categoryValue: string;
   onCategoryChange: (category: CategoryStr) => void;
+  bgColor?: '#c4c4c4' | '#fff'
 }
 
 /**
@@ -13,19 +14,20 @@ type Props = {
  * @Author: XuShuai
  * @Date: 2023-12-19 05:42:33
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-01-18 22:05:13
+ * @LastEditTime: 2025-05-04 23:05:35
  * @FilePath: src/components/money/CategorySection.tsx
  */
-export const CategorySection: React.FC<Props> = (props) => {
+export const CategorySection: React.FC<Props> = (
+  {
+    categoryValue,
+    onCategoryChange,
+    bgColor,
+  }
+) => {
   const categoryMap =
     {'income': '收入', 'expenditure': '支出',} as const
-  
-  /* tab按钮 内容数组 */
-  const [categoryList,] = useState(['expenditure', 'income',] as const)
 
-  /* 切换 收入/支出 功能 */
-  const categoryValue = props.categoryValue
-  const onCategoryChange = props.onCategoryChange
+  const categoryList = ['expenditure', 'income',] as const
 
   // 选中样式
   const getSelectedCategoryClass = (
@@ -33,7 +35,7 @@ export const CategorySection: React.FC<Props> = (props) => {
   ) => categoryValue === categoryStr ? 'selected' : ''
 
   return (
-    <CategoryStyled>
+    <CategoryStyled $bgColor={bgColor}>
       <ul>
         {categoryList.map(categoryStr => (
           <li

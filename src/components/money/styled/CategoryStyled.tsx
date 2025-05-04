@@ -6,19 +6,26 @@ import styled from 'styled-components'
  * @Author: XuShuai
  * @Date: 2024-01-01 20:16:16
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-01-18 21:04:40
+ * @LastEditTime: 2025-05-04 22:59:27
  * @FilePath: src/components/money/styled/CategoryStyled.tsx
  */
-export const CategoryStyled = styled.section`
+export const CategoryStyled = styled.section
+  .attrs<{ $bgColor?: string }>((props) => ({
+    $bgColor: props.$bgColor || '#c4c4c4',
+  }))`
   font-size: 24px;
 
   > ul {
     display: flex;
     justify-content: center;
-    background-color: #c4c4c4;
+    background-color: ${
+      (props) =>
+        props.$bgColor
+    };
     position: relative;
 
     > li {
+      cursor: pointer;
       width: 50%;
       text-align: center;
       padding: 16px 0;

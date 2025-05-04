@@ -1,19 +1,27 @@
+import React, {useState} from 'react'
+import {Layout} from 'components/common/Layout'
+import {CategorySection, CategoryStr} from '../components/money/CategorySection'
+
 /**
- * @Description:
+ * @Description: 统计页面
  * @Author: XuShuai
  * @Date: 2025-02-22 21:40:25
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-23 20:06:10
+ * @LastEditTime: 2025-05-04 22:58:58
  * @FilePath: src/views/Statistics.tsx
  */
-import React from 'react'
-import {Layout} from 'components/common/Layout'
 
 // 统计页面
 export function Statistics() {
+  const [category, setCategory] =
+    useState<CategoryStr>('expenditure')
+
   return (
     <Layout>
-      <h2>统计页面</h2>
+      <CategorySection
+        categoryValue={category}
+        onCategoryChange={value => setCategory(value)}
+        bgColor="#fff"/>
     </Layout>
   )
 }
