@@ -14,7 +14,7 @@ export type Props = {
  * @Author: XuShuai
  * @Date: 2023-12-19 05:42:44
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-05-04 22:15:38
+ * @LastEditTime: 2025-05-04 22:36:22
  * @FilePath: src/components/money/NumberPadSection.tsx
  */
 export const NumberPadSection: FC<Props> = (
@@ -30,9 +30,6 @@ export const NumberPadSection: FC<Props> = (
   /** 监听外部 amountValue 变化，更新组件显示字符 */
   useEffect(() => {
     setOutputValue(amountValue.toString())
-    console.log('useEffect amountValue_______________________')
-    console.log('%c 3 --> amountValue: ', 'color:#ff0;', amountValue)
-    console.log('_______________________useEffect amountValue')
   }, [amountValue])
 
   /** 事件代理 键盘点击事件 */
@@ -58,13 +55,6 @@ export const NumberPadSection: FC<Props> = (
       setOutputValue,
       onAmountChange,
     )
-
-    console.log('onClickButtonWrapper_______________________')
-    console.log('%c 2 --> text: ', 'color:#0f0;', text)
-    console.log('%c 2 --> outputValue: ', 'color:#0f0;', outputValue)
-    console.log('%c 4 --> genOutput(text as InputTextString, outputValue): ', 'color:#f00;',
-      genOutput(text as InputTextString, outputValue))
-    console.log('_______________________onClickButtonWrapper')
   }
 
   return (
