@@ -18,12 +18,13 @@ type AccountRecordItemOmitTime = Omit<AccountRecordItem, 'createdAt' | 'updatedA
  * @Author: XuShuai
  * @Date: 2025-03-23 12:42:05
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-03-23 22:33:26
+ * @LastEditTime: 2025-05-04 18:09:16
  * @FilePath: src/hooks/useRecords.ts
  */
 export const useRecords = () => {
   const [records, setRecords] = useState<AccountRecordItem[]>([])
 
+  /** 添加记账记录，带有创建时间 */
   const addRecord = (newRecord: AccountRecordItemOmitTime) => {
     const record = {
       ...newRecord,
@@ -32,7 +33,7 @@ export const useRecords = () => {
     setRecords([...records, record])
   }
 
-  /** 挂载时，读取 localStorage 中的 records */
+  /** 挂载时，从localStorage 中读取 records */
   useEffect(() => {
     setRecords(
       JSON.parse(window.localStorage.getItem('records') || '[]')
