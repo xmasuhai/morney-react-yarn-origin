@@ -1,31 +1,24 @@
 export type InputTextString =
-  '0'
-  | '1'
-  | '2'
-  | '3'
-  | '4'
-  | '5'
-  | '6'
-  | '7'
-  | '8'
-  | '9'
+  | `${0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9}`
   | '.'
   | '删除'
   | '清空'
 
 /**
- * @Description: 生成0-9、.、删除、清空按钮的字符串输出
+ * @Description: 通过 0-9、.、删除、清空按钮的字符串，返回输出字符串
  * @Author: XuShuai
  * @Date: 2023-12-30 17:16:31
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-02-16 15:46:06
+ * @LastEditTime: 2025-05-04 22:07:59
  * @FilePath: src/components/money/helpers/genOutput.ts
  */
 export const genOutput = (
-  text: InputTextString,
-  output = '0'
+  // 输入的每一个字符
+  inputEachText: InputTextString,
+  // 页面显示的输出字符串
+  outputStr = '0',
 ) => {
-  switch (text) {
+  switch(inputEachText) {
     case '0':
     case '1':
     case '2':
@@ -36,19 +29,19 @@ export const genOutput = (
     case '7':
     case '8':
     case '9':
-      if(output === '0') {
-        return text
+      if(outputStr === '0') {
+        return inputEachText
       } else {
-        return output + text
+        return outputStr + inputEachText
       }
     case '.':
-      if(output.includes('.')) {return output}
-      return output + '.'
+      if(outputStr.includes('.')) {return outputStr}
+      return outputStr + '.'
     case '删除':
-      if(output.length === 1) {
+      if(outputStr.length === 1) {
         return ''
       } else {
-        return output.slice(0, -1) || ''
+        return outputStr.slice(0, -1) || ''
       }
     case '清空':
       return ''

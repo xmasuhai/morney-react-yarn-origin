@@ -1,4 +1,4 @@
-import React, {FC,} from 'react'
+import React, {FC, useEffect, useState,} from 'react'
 import {NumberPadStyled} from 'components/money/styled/NumberPadStyled'
 import {InputTextString, genOutput} from 'components/money/helpers/genOutput'
 import {changeOutput} from 'components/money/helpers/changeOutput'
@@ -14,7 +14,7 @@ export type Props = {
  * @Author: XuShuai
  * @Date: 2023-12-19 05:42:44
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-03-30 15:46:55
+ * @LastEditTime: 2025-05-04 22:15:38
  * @FilePath: src/components/money/NumberPadSection.tsx
  */
 export const NumberPadSection: FC<Props> = (
@@ -24,7 +24,16 @@ export const NumberPadSection: FC<Props> = (
     onConfirm,
   }
 ) => {
-  const outputValue = amountValue.toString()
+  // const outputValue = amountValue.toString()
+  const [outputValue, setOutputValue] = useState(amountValue.toString())
+
+  /** 监听外部 amountValue 变化，更新组件显示字符 */
+  useEffect(() => {
+    setOutputValue(amountValue.toString())
+    console.log('useEffect amountValue_______________________')
+    console.log('%c 3 --> amountValue: ', 'color:#ff0;', amountValue)
+    console.log('_______________________useEffect amountValue')
+  }, [amountValue])
 
   /** 事件代理 键盘点击事件 */
   const onClickButtonWrapper = (
@@ -38,20 +47,24 @@ export const NumberPadSection: FC<Props> = (
       return
     }
 
-    // TODO 使用类型枚举优化
     const ifFitText = '0123456789.'
       .split('')
       .concat(['删除', '清空',])
       .includes(text)
+    if(!ifFitText) {return}
 
-    if(ifFitText) {
-      changeOutput(
-        genOutput(text as InputTextString, outputValue),
-        // setOutputValue,
-        onAmountChange,
-      )
-    }
+    changeOutput(
+      genOutput(text as InputTextString, outputValue),
+      setOutputValue,
+      onAmountChange,
+    )
 
+    console.log('onClickButtonWrapper_______________________')
+    console.log('%c 2 --> text: ', 'color:#0f0;', text)
+    console.log('%c 2 --> outputValue: ', 'color:#0f0;', outputValue)
+    console.log('%c 4 --> genOutput(text as InputTextString, outputValue): ', 'color:#f00;',
+      genOutput(text as InputTextString, outputValue))
+    console.log('_______________________onClickButtonWrapper')
   }
 
   return (
