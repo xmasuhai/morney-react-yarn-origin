@@ -3,7 +3,7 @@ import {Layout} from 'components/common/Layout'
 import {CategorySection, CategoryStr} from 'components/money/CategorySection'
 import {useRecords} from 'hooks/useRecords'
 import {useTags} from 'hooks/useTags'
-import dayjs from 'dayjs'
+// import dayjs from 'dayjs'
 import {RecordStyled} from 'components/statistics/styled/RecordStyled'
 
 /**
@@ -11,7 +11,7 @@ import {RecordStyled} from 'components/statistics/styled/RecordStyled'
  * @Author: XuShuai
  * @Date: 2025-02-22 21:40:25
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-05-07 05:46:49
+ * @LastEditTime: 2025-05-07 05:52:43
  * @FilePath: src/views/Statistics.tsx
  */
 export const Statistics = () => {
@@ -52,7 +52,7 @@ export const Statistics = () => {
                   <span className="note">{record.note}</span>
                 }
                 {/* 金额 */}
-                <span className="amount">￥{record.amount}</span>
+                <span className="amount">{record.amount}</span>
 
                 {/*
                 <span className="date">

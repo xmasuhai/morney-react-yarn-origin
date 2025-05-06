@@ -5,7 +5,7 @@
  * @Author: XuShuai
  * @Date: 2025-05-07 05:22:29
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-05-07 05:45:15
+ * @LastEditTime: 2025-05-07 05:51:17
  * @FilePath: src/components/statistics/styled/RecordStyled.tsx
  */
 export const RecordStyled = styled.section`
@@ -27,7 +27,11 @@ export const RecordStyled = styled.section`
     margin-right: auto;
   }
 
-  & > .amount {}
+  & > .amount {
+    &::before {
+      content: '¥';
+    }
+  }
 
   & > .date {}
 `
