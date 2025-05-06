@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {CategoryStyled} from './styled/CategoryStyled'
 
 export type CategoryStr = 'income' | 'expenditure'
@@ -14,7 +14,7 @@ type Props = {
  * @Author: XuShuai
  * @Date: 2023-12-19 05:42:33
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-05-04 23:05:35
+ * @LastEditTime: 2025-05-07 04:33:46
  * @FilePath: src/components/money/CategorySection.tsx
  */
 export const CategorySection: React.FC<Props> = (
