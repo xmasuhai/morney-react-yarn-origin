@@ -1,16 +1,17 @@
 import React, {useState} from 'react'
 import {Layout} from 'components/common/Layout'
-import {CategorySection, CategoryStr} from '../components/money/CategorySection'
-import {useRecords} from '../hooks/useRecords'
-import {useTags} from '../hooks/useTags'
+import {CategorySection, CategoryStr} from 'components/money/CategorySection'
+import {useRecords} from 'hooks/useRecords'
+import {useTags} from 'hooks/useTags'
 import dayjs from 'dayjs'
+import {RecordStyled} from 'components/statistics/styled/RecordStyled'
 
 /**
  * @Description: 统计页面
  * @Author: XuShuai
  * @Date: 2025-02-22 21:40:25
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-05-07 05:15:57
+ * @LastEditTime: 2025-05-07 05:46:49
  * @FilePath: src/views/Statistics.tsx
  */
 export const Statistics = () => {
@@ -26,28 +27,45 @@ export const Statistics = () => {
         onCategoryChange={value => setCategory(value)}
         bgColor="#fff"/>
 
-      <div>
+      <section>
         {
           records
             .map(record => (
-              <div key={record.createdAt}>
+              <RecordStyled key={record.createdAt}>
+                {/* 标签 */}
+                <ul className="tags">
+                  {
+                    record.tagIds
+                      .map((tagId, index, tagIds) => (
+                        <li key={tagId} className="tag">
+                          <span>
+                            {findTagName(tagId)}
+                            {index === tagIds.length - 1 ? '' : '、'}
+                          </span>
+                        </li>
+                      ))
+                  }
+                </ul>
+                {/* 备注 */}
                 {
-                  record.tagIds
-                    .map((tagId, index, tagIds) => (
-                      <span key={tagId}>
-                        {findTagName(tagId)}
-                        {index === tagIds.length - 1 ? '' : '、'}
-                      </span>
-                    ))
+                  record.note &&
+                  <span className="note">{record.note}</span>
                 }
-                <hr/>
-                <p>{record.amount}</p>
-                <hr/>
-                <p>{dayjs(record.createdAt).format('YYYY-MM-DD')}</p>
-              </div>
+                {/* 金额 */}
+                <span className="amount">￥{record.amount}</span>
+
+                {/*
+                <span className="date">
+                  {
+                    dayjs(record.createdAt)
+                      .format('YYYY-MM-DD')
+                  }
+                </span>
+                */}
+              </RecordStyled>
             ))
         }
-      </div>
+      </section>
 
     </Layout>
   )
