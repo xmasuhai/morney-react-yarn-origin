@@ -11,7 +11,7 @@ import {RecordStyled} from 'components/statistics/styled/RecordStyled'
  * @Author: XuShuai
  * @Date: 2025-02-22 21:40:25
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-05-07 05:52:43
+ * @LastEditTime: 2025-05-07 06:05:30
  * @FilePath: src/views/Statistics.tsx
  */
 export const Statistics = () => {
@@ -19,6 +19,8 @@ export const Statistics = () => {
     useState<CategoryStr>('expenditure')
   const {records} = useRecords()
   const {findTagName} = useTags()
+  const selectedRecords = records
+    .filter(record => record.category === category)
 
   return (
     <Layout>
@@ -29,7 +31,7 @@ export const Statistics = () => {
 
       <section>
         {
-          records
+          selectedRecords
             .map(record => (
               <RecordStyled key={record.createdAt}>
                 {/* 标签 */}
