@@ -3,13 +3,14 @@ import {Layout} from 'components/common/Layout'
 import {CategorySection, CategoryStr} from '../components/money/CategorySection'
 import {useRecords} from '../hooks/useRecords'
 import {useTags} from '../hooks/useTags'
+import dayjs from 'dayjs'
 
 /**
  * @Description: 统计页面
  * @Author: XuShuai
  * @Date: 2025-02-22 21:40:25
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-05-07 04:56:32
+ * @LastEditTime: 2025-05-07 05:15:57
  * @FilePath: src/views/Statistics.tsx
  */
 export const Statistics = () => {
@@ -33,12 +34,16 @@ export const Statistics = () => {
                 {
                   record.tagIds
                     .map((tagId, index, tagIds) => (
-                      <span key={tagId} style={{border: '1px solid red'}}>
+                      <span key={tagId}>
                         {findTagName(tagId)}
                         {index === tagIds.length - 1 ? '' : '、'}
                       </span>
                     ))
                 }
+                <hr/>
+                <p>{record.amount}</p>
+                <hr/>
+                <p>{dayjs(record.createdAt).format('YYYY-MM-DD')}</p>
               </div>
             ))
         }
