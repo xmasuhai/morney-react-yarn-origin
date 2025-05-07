@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react'
 import {CategoryStr} from 'components/money/CategorySection'
 import {useUpdate} from './useUpdate'
 
-type AccountRecordItem = {
+export type AccountRecordItem = {
   tagIds: number[]
   note: string
   category: CategoryStr
@@ -18,7 +18,7 @@ type AccountRecordItemOmitTime = Omit<AccountRecordItem, 'createdAt' | 'updatedA
  * @Author: XuShuai
  * @Date: 2025-03-23 12:42:05
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-05-04 18:47:59
+ * @LastEditTime: 2025-05-08 06:24:51
  * @FilePath: src/hooks/useRecords.ts
  */
 export const useRecords = () => {

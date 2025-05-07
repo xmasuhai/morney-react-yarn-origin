@@ -1,4 +1,4 @@
-﻿import styled from 'styled-components'
+import styled from 'styled-components'
 
 /**
  * @Description: 记账记录项目样式
