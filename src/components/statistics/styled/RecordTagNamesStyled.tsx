@@ -4,11 +4,11 @@ import {
 } from 'components/common/styled/oneLineEllipsisMixin'
 
 /**
- * @Description: 斌钱名称列表样式
+ * @Description: 标签名称列表样式
  * @Author: XuShuai
  * @Date: 2025-05-11 15:39:20
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-05-11 16:31:04
+ * @LastEditTime: 2025-05-11 16:42:09
  * @FilePath: src/components/statistics/styled/RecordTagNamesStyled.tsx
  */
 export const RecordTagNamesStyled = styled.ul.attrs<{
