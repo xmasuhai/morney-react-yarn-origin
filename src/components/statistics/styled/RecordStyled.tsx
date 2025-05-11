@@ -5,7 +5,7 @@ import styled from 'styled-components'
  * @Author: XuShuai
  * @Date: 2025-05-07 05:22:29
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-05-07 05:51:17
+ * @LastEditTime: 2025-05-11 15:40:39
  * @FilePath: src/components/statistics/styled/RecordStyled.tsx
  */
 export const RecordStyled = styled.section`
@@ -15,11 +15,6 @@ export const RecordStyled = styled.section`
   font-size: 18px;
   line-height: 20px;
   padding: 10px 16px;
-
-  & > .tags {
-    display: flex;
-    flex-wrap: nowrap;
-  }
 
   & > .note {
     color: #999;
