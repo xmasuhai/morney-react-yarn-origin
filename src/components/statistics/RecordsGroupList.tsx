@@ -1,4 +1,4 @@
-﻿import {useTags} from 'hooks/useTags'
+import {useTags} from 'hooks/useTags'
 import {AccountRecordItem} from 'hooks/useRecords'
 import {RecordStyled} from 'components/statistics/styled/RecordStyled'
 import React from 'react'
