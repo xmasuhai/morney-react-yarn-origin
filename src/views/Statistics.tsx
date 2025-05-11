@@ -3,14 +3,15 @@ import {Layout} from 'components/common/Layout'
 import {CategorySection, CategoryStr} from 'components/money/CategorySection'
 import {AccountRecordItem, useRecords} from 'hooks/useRecords'
 import dayjs from 'dayjs'
-import {RecordsGroupList} from '../components/statistics/RecordsGroupList'
+import {RecordsGroupList} from 'components/statistics/RecordsGroupList'
+import {DateFormattedHeader} from 'components/statistics/DateFormattedHeader'
 
 /**
  * @Description: 统计页面
  * @Author: XuShuai
  * @Date: 2025-02-22 21:40:25
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-05-11 12:42:31
+ * @LastEditTime: 2025-05-11 13:21:18
  * @FilePath: src/views/Statistics.tsx
  */
 export const Statistics = () => {
@@ -67,7 +68,7 @@ export const Statistics = () => {
         sortedRecordsGroup
           .map(([date, records = []],) => (
             <section key={date}>
-              <h3>{date}</h3>
+              <DateFormattedHeader date={date}/>
               <RecordsGroupList records={records}/>
             </section>
           ))
