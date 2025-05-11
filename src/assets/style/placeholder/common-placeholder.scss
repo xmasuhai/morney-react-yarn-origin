@@ -1,0 +1,29 @@
+﻿/**
+ * @Description: 占位样式
+ * @Author: XuShuai
+ * @Date: 2025-05-11 15:33:13
+ * @LastEditors: XuShuai
+ * @LastEditTime: 2025-05-11 15:33:48
+ * @FilePath: src/assets/style/placeholder/placeholder.scss
+ */
+
+%clear-fix {
+  &::after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+}
+
+%outer-shadow {
+  box-shadow: inset 0 0 3px $color-shadow;
+}
+
+%inner-shadow {
+  box-shadow: inset 0 -3px 3px -3px $color-shadow,
+  inset 0 3px 3px -3px $color-shadow;
+}
+
+%tag-shadow {
+  box-shadow: 0 1px 1px 1px $shadow-dark;
+}

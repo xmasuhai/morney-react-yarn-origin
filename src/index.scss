@@ -1,33 +1,11 @@
+/**
+ * @Description: 样式入口文件
+ * @Author: XuShuai
+ * @Date: 2023-10-28 22:00:09
+ * @LastEditors: XuShuai
+ * @LastEditTime: 2025-05-11 15:32:32
+ * @FilePath: src/index.scss
+ */
 //noinspection CssInvalidAtRule
 @import-normalize;
-@import 'assets/style/common/reset';
-@import 'assets/style/var/var';
-@import 'assets/style/helpers/font';
-
-body {
-  font-family: $font-hei;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 16px;
-  line-height: 1.2;
-  background: #f5f5f5;
-}
-
-code {font-family: $font-code;}
-
-.icon {
-  width: 1em;
-  height: 1em;
-}
-
-.clear-fix::after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-.one-line {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+@import 'assets/style/common/global.scss';

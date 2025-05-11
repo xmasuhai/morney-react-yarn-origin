@@ -1,0 +1,35 @@
+﻿/**
+ * @Description: 混入样式
+ * @Author: XuShuai
+ * @Date: 2025-05-11 15:35:49
+ * @LastEditors: XuShuai
+ * @LastEditTime: 2025-05-11 15:47:41
+ * @FilePath: src/assets/style/mixins/common-mixins.scss
+ */
+
+@mixin tag-shadow($x: 0, $y: 1px, $blur: 1px, $spread: 0, $color: $shadow-dark) {
+  box-shadow: $x $y $blur $spread $color;
+}
+
+// mixins text overflow single
+@mixin one-line-ellipsis($max-width: 100%) {
+  max-width: $max-width;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// mixins text overflow
+@mixin multiline-ellipsis($line: 2, $line-height: 1.6em, $max-width: 5em) {
+  //white-space: nowrap;
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  line-height: $line-height;
+  max-height: $line-height * $line;
+  max-width: $max-width;
+}

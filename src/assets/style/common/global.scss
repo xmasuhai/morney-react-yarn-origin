@@ -1,53 +1,42 @@
+@import 'assets/style/common/reset';
+@import 'assets/style/helpers/font';
+@import 'assets/style/var/var';
+@import 'assets/style/placeholder/common-placeholder';
+@import 'assets/style/mixins/common-mixins';
+
 /**
  * @Description: 全局
  * @Author: XuShuai
  * @Date: 2023-12-11 05:25:32
  * @LastEditors: XuShuai
- * @LastEditTime: 2024-12-21 21:07:16
+ * @LastEditTime: 2025-05-11 15:37:47
  * @FilePath: src/assets/style/common/global.scss
  */
-$font-hei: -apple-system, "Smartisan CNS", "Noto Sans", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
-$font-kai: Baskerville, Georgia, "Liberation Serif", "Kaiti SC", STKaiti, "AR PL UKai CN", "AR PL UKai HK", "AR PL UKai TW", "AR PL UKai TW MBE", "AR PL KaitiM GB", KaiTi, KaiTi_GB2312, DFKai-SB, "TW\-Kai", serif;
-$font-song: Georgia, "Nimbus Roman No9 L", "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", "Source Han Serif CN", STSong, "AR PL New Sung", "AR PL SungtiL GB", NSimSun, SimSun, "TW\-Sung", "WenQuanYi Bitmap Song", "AR PL UMing CN", "AR PL UMing HK", "AR PL UMing TW", "AR PL UMing TW MBE", PMingLiU, MingLiU, serif;
-$color-highlight: #ff4500;
-$shadow-dark: #bcbbc1;
-$color-shadow: rgba(0, 0, 0, 0.25);
-// placeholder
-%clear-fix {
-  &::after {
-    clear: both;
-    content: '';
-    display: block;
-    }
-  }
+body {
+  font-family: $font-hei;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: 1.2;
+  background: #f5f5f5;
+}
 
-%outer-shadow {
-  box-shadow: inset 0 0 3px $color-shadow;
-  }
+code {font-family: $font-code;}
 
-%inner-shadow {
-  box-shadow: inset 0 -3px 3px -3px $color-shadow,
-  inset 0 3px 3px -3px $color-shadow;
-  }
+.icon {
+  width: 1em;
+  height: 1em;
+}
 
-%tag-shadow {
-  box-shadow: 0 1px 1px 1px $shadow-dark;
-  }
+.clear-fix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
 
-// mixins
-@mixin tag-shadow($x: 0, $y: 1px, $blur: 1px, $spread: 0, $color: $shadow-dark) {
-  box-shadow: $x $y $blur $spread $color;
-  }
-// mixins text overflow
-@mixin multiline-ellipsis($line: 2, $line-height: 1.6em, $max-width: 5em) {
-  //white-space: nowrap;
-  word-break: break-word;
+.one-line {
+  display: inline-block;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: $line;
-  -webkit-box-orient: vertical;
-  line-height: $line-height;
-  max-height: $line-height * $line;
-  max-width: $max-width;
-  }
+}
