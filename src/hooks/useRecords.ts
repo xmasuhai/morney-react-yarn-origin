@@ -18,7 +18,7 @@ type AccountRecordItemOmitTime = Omit<AccountRecordItem, 'createdAt' | 'updatedA
  * @Author: XuShuai
  * @Date: 2025-03-23 12:42:05
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-05-08 06:24:51
+ * @LastEditTime: 2025-05-19 21:25:04
  * @FilePath: src/hooks/useRecords.ts
  */
 export const useRecords = () => {
@@ -66,7 +66,7 @@ export const useRecords = () => {
         JSON.stringify(records)
       )
     },
-    [records,]
+    records
   )
 
   return {
