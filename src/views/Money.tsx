@@ -3,10 +3,7 @@ import {Layout} from 'components/common/Layout'
 import styled from 'styled-components'
 import {TagsSection} from 'components/money/TagsSection'
 import {NoteSection} from 'components/money/NoteSection'
-import {
-  CategorySection,
-  CategoryStr,
-} from 'components/money/CategorySection'
+import {CategorySection, CategoryStr,} from 'components/money/CategorySection'
 import {NumberPadSection} from 'components/money/NumberPadSection'
 import {useRecords} from 'hooks/useRecords'
 
@@ -28,7 +25,7 @@ const defaultMoneyInfoObj = {
  * @Author: XuShuai
  * @Date: 2023-12-14 06:45:40
  * @LastEditors: XuShuai
- * @LastEditTime: 2025-05-04 18:48:41
+ * @LastEditTime: 2025-06-02 06:24:50
  * @FilePath: src/views/Money.tsx
  */
 export const Money = () => {
@@ -71,7 +68,7 @@ export const Money = () => {
   }
 
   return (
-    <MyLayout>
+    <MyLayout scrollTop={9999}>
       <TagsSection
         selectedTagIds={moneyInfoObj.tagIds}
         onSelectTagIdsChange={onSelectTagIdsChange}/>
