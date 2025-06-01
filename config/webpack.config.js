@@ -65,14 +65,14 @@ const sassRegex = /\.(scss|sass)$/
 const sassModuleRegex = /\.module\.(scss|sass)$/
 
 const hasJsxRuntime = (() => {
-  if (process.env.DISABLE_NEW_JSX_TRANSFORM === 'true') {
+  if(process.env.DISABLE_NEW_JSX_TRANSFORM === 'true') {
     return false
   }
 
   try {
     require.resolve('react/jsx-runtime')
     return true
-  } catch (e) {
+  } catch(e) {
     return false
   }
 })()
@@ -84,10 +84,10 @@ const hasJsxRuntime = (() => {
  * @Author: XuShuai
  * @Date: 2023-12-11 05:58:44
  * @LastEditors: XuShuai
- * @LastEditTime: 2024-12-08 16:54:28
+ * @LastEditTime: 2025-06-01 20:08:37
  * @FilePath: config/webpack.config.js
  */
-module.exports = function (webpackEnv) {
+module.exports = function(webpackEnv) {
   const isEnvDevelopment = webpackEnv === 'development'
   const isEnvProduction = webpackEnv === 'production'
 
@@ -146,7 +146,7 @@ module.exports = function (webpackEnv) {
         },
       },
     ].filter(Boolean)
-    if (preProcessor) {
+    if(preProcessor) {
       loaders.push(
         {
           loader: require.resolve('resolve-url-loader'),
@@ -627,6 +627,8 @@ module.exports = function (webpackEnv) {
       // during a production build.
       // Otherwise React will be compiled in the very slow development mode.
       new webpack.DefinePlugin(env.stringified),
+      // 将当前应用目录添加到全局变量中，方便在其他地方使用
+      new webpack.DefinePlugin({'process.env.CWD': JSON.stringify(process.cwd()),}),
       // This is necessary to emit hot updates (CSS and Fast Refresh):
       isEnvDevelopment && new webpack.HotModuleReplacementPlugin(),
       // Experimental hot reloading for React .
