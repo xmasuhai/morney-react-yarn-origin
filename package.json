@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "private": false,
+  "homepage": "https://xmasuhai.github.io/morney-react-yarn-origin-website/",
   "scripts": {
     "preinstall": "npx only-allow yarn",
     "start": "node scripts/start.js",
