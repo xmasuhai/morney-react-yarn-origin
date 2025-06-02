@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/morney-react-yarn-origin-website/static/css/main.6494d1ec.chunk.css",
+    "main.js": "/morney-react-yarn-origin-website/static/js/main.8d70ba53.chunk.js",
+    "runtime-main.js": "/morney-react-yarn-origin-website/static/js/runtime-main.eb26299b.js",
+    "static/js/2.52fd712f.chunk.js": "/morney-react-yarn-origin-website/static/js/2.52fd712f.chunk.js",
+    "static/js/3.9f852166.chunk.js": "/morney-react-yarn-origin-website/static/js/3.9f852166.chunk.js",
+    "index.html": "/morney-react-yarn-origin-website/index.html",
+    "static/js/2.52fd712f.chunk.js.LICENSE.txt": "/morney-react-yarn-origin-website/static/js/2.52fd712f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.eb26299b.js",
+    "static/js/2.52fd712f.chunk.js",
+    "static/css/main.6494d1ec.chunk.css",
+    "static/js/main.8d70ba53.chunk.js"
+  ]
+}
