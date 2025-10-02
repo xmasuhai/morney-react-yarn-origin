@@ -31,6 +31,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
           folder: build # The folder the action should deploy.
-          ssh-key: ${{ secrets.DEPLOY_KEY }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           repository-name: xmasuhai/morney-react-yarn-origin
           branch: gh-pages
