@@ -30,7 +30,7 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
-          FOLDER: dist # The folder the action should deploy.
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          REPOSITORY_NAME: xmasuhai/morney-react-yarn-origin-website
-          BRANCH: gh-pages
+          folder: dist # The folder the action should deploy.
+          token: ${{ secrets.ACCESS_TOKEN }}
+          repository-name: xmasuhai/morney-react-yarn-origin-website
+          branch: gh-pages
