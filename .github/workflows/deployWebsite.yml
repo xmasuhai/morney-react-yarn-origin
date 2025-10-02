@@ -32,5 +32,5 @@ jobs:
         with:
           folder: build # The folder the action should deploy.
           ssh-key: ${{ secrets.DEPLOY_KEY }}
-          repository-name: xmasuhai/morney-react-yarn-origin-website
+          repository-name: xmasuhai/morney-react-yarn-origin
           branch: gh-pages
