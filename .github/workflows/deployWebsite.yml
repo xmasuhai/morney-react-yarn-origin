@@ -32,5 +32,5 @@ jobs:
         with:
           folder: build # The folder the action should deploy.
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          repository-name: xmasuhai/morney-react-yarn-origin
+          repository-name: xmasuhai/morney-react-yarn-origin-website
           branch: gh-pages
